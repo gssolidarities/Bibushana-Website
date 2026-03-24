@@ -499,7 +499,91 @@ a:hover { color: var(--gold); }
   position: relative;
 }
 
+.research-project.with-image {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.research-project.with-image .project-text { flex: 1; }
+
+.research-project .project-book-img {
+  flex: 0 0 220px;
+  max-width: 220px;
+}
+
+.research-project .project-book-img img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--red);
+  transition: border-color 0.4s, transform 0.4s;
+}
+
+.research-project .project-book-img img:hover {
+  border-color: var(--gold);
+  transform: scale(1.02);
+}
+
 .research-project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+/* ═══ PHOTO GALLERY ═══ */
+.photo-gallery {
+  padding: 40px 8vw;
+}
+
+.photo-gallery-title {
+  font-family: var(--heading);
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photo-gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-gallery-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
+  filter: grayscale(30%);
+}
+
+.photo-gallery-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.photo-gallery-item .photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 14px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  font-family: var(--body);
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+
+.photo-gallery-item:hover .photo-caption {
+  transform: translateY(0);
+}
 
 .project-type-tag {
   display: inline-block;
@@ -1241,7 +1325,11 @@ footer .gss-credit { color: var(--red); }
   .hero-portrait { flex: 0 0 auto; max-width: 280px; margin: 0 auto; }
   .hero-portrait img { height: auto; }
   .section { padding: 80px 6vw; }
-  .profile-image-section img { max-width: 100%; height: 280px; }
+  .profile-image-section img { max-width: 100%; height: auto; }
+  .research-project.with-image { flex-direction: column; }
+  .research-project .project-book-img { flex: 0 0 auto; max-width: 180px; margin: 0 auto; }
+  .photo-gallery-grid { grid-template-columns: 1fr 1fr; }
+  .photo-gallery-item img { height: 220px; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
 }
@@ -1249,6 +1337,8 @@ footer .gss-credit { color: var(--red); }
 @media (max-width: 600px) {
   .teaching-grid, .projects-grid { grid-template-columns: 1fr; }
   .float-nav { display: none; }
+  .photo-gallery-grid { grid-template-columns: 1fr; }
+  .photo-gallery-item img { height: 250px; }
   .honors-stats { grid-template-columns: 1fr 1fr; }
 }
 </style>
@@ -1395,6 +1485,24 @@ footer .gss-credit { color: var(--red); }
   <div class="timeline-container">
     <div class="timeline-line"><div class="timeline-line-fill" id="timelineFill"></div></div>
 
+    <div class="research-project with-image reveal">
+      <div class="project-text">
+        <div class="project-type-tag">MONOGRAPH</div>
+        <div class="project-title">GENDERING SOUTH ASIA</div>
+        <div class="project-meta">RHETORICAL NON-PHALLIC BODIES IN THE GLOBAL CAPITAL · ROUTLEDGE, 2025</div>
+        <p class="project-desc">
+          This book analyzes how gendered female bodies and non-phallic bodies function, are rhetoricized as functioning,
+          are made to function, or are functioned upon in two extremized spaces — the private and the public. It examines
+          heteronormative rhetorics built around cis women, trans women, trans men, and queer bodies through policies,
+          jurisdictions, media, and laws. The book provides a framework for challenging the phallic symbolic order of
+          patriarchy, heteronormativity, capitalism, colonialism, racism, and imperialism.
+        </p>
+      </div>
+      <div class="project-book-img">
+        <img src="images/book.jpg" alt="Gendering South Asia — Routledge, 2025">
+      </div>
+    </div>
+
     <div class="research-project reveal">
       <div class="project-type-tag">ONGOING PROJECT</div>
       <div class="project-title">RE-RHETORICIZING GLOBAL SOUTHS CONTRAPUNTALLY</div>
@@ -1406,19 +1514,6 @@ footer .gss-credit { color: var(--red); }
         empire, capitalism, racism, heteropatriarchy, and digital colonialism silence, erase, and exploit Global South
         communities — while also tracing the insurgent strategies those same communities deploy to survive, resist, revolt,
         reclaim, and speak back.
-      </p>
-    </div>
-
-    <div class="research-project reveal">
-      <div class="project-type-tag">MONOGRAPH</div>
-      <div class="project-title">GENDERING SOUTH ASIA</div>
-      <div class="project-meta">RHETORICAL NON-PHALLIC BODIES IN THE GLOBAL CAPITAL · ROUTLEDGE, 2025</div>
-      <p class="project-desc">
-        This book analyzes how gendered female bodies and non-phallic bodies function, are rhetoricized as functioning,
-        are made to function, or are functioned upon in two extremized spaces — the private and the public. It examines
-        heteronormative rhetorics built around cis women, trans women, trans men, and queer bodies through policies,
-        jurisdictions, media, and laws. The book provides a framework for challenging the phallic symbolic order of
-        patriarchy, heteronormativity, capitalism, colonialism, racism, and imperialism.
       </p>
     </div>
 
@@ -1760,6 +1855,37 @@ footer .gss-credit { color: var(--red); }
     <div class="photo-credit">
       <span class="credit-location">BOUDHANATH STUPA · EVENING</span>
       <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 27/11/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PHOTOGRAPHY ═══ -->
+<div class="photo-gallery">
+  <div class="photo-gallery-title reveal">PHOTOGRAPHY BY BIBHUSHANA POUDYAL</div>
+  <div class="photo-gallery-grid">
+    <div class="photo-gallery-item reveal">
+      <img src="images/'My Hometown' by Bibhushana1.jpg" alt="My Hometown by Bibhushana" loading="lazy">
+      <div class="photo-caption">'My Hometown' by Bibhushana</div>
+    </div>
+    <div class="photo-gallery-item reveal">
+      <img src="images/A%20protestor%20at%20the%20%E2%80%98El%20Paso%20for%20Palestine%E2%80%99%20demonstration%20at%20San%20Jacinto%20Plaza%20in%20El%20Paso%2C%20Texas%2C%20May%2022%2C%202021.%20%5BPhoto_%20Bibhushana%20Poudyal%5D.jpg" alt="A protestor at the El Paso for Palestine demonstration" loading="lazy">
+      <div class="photo-caption">A protestor at the 'El Paso for Palestine' demonstration at San Jacinto Plaza in El Paso, Texas, May 22, 2021</div>
+    </div>
+    <div class="photo-gallery-item reveal">
+      <img src="images/'My Hometown' by Bibhushana3.jpg" alt="My Hometown by Bibhushana" loading="lazy">
+      <div class="photo-caption">'My Hometown' by Bibhushana</div>
+    </div>
+    <div class="photo-gallery-item reveal">
+      <img src="images/Image of The Chicano Codices_ Encountering Art of the Americas [Photo_ Bibhushana Poudyal].jpg" alt="The Chicano Codices: Encountering Art of the Americas" loading="lazy">
+      <div class="photo-caption">Image of The Chicano Codices: Encountering Art of the Americas</div>
+    </div>
+    <div class="photo-gallery-item reveal">
+      <img src="images/El Paso Sky [Photo_ Bibhushana Poudyal].jpg" alt="El Paso Sky" loading="lazy">
+      <div class="photo-caption">El Paso Sky</div>
+    </div>
+    <div class="photo-gallery-item reveal">
+      <img src="images/'My Hometown' by Bibhushana6.jpg" alt="My Hometown by Bibhushana" loading="lazy">
+      <div class="photo-caption">'My Hometown' by Bibhushana</div>
     </div>
   </div>
 </div>
