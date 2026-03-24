@@ -221,7 +221,60 @@ a:hover { color: var(--gold); }
   overflow: hidden;
 }
 
-.hero-content { position: relative; z-index: 2; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text { flex: 1; }
+
+.hero-portrait {
+  flex: 0 0 320px;
+  max-width: 320px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.1s forwards;
+}
+
+.hero-portrait img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--red);
+  filter: grayscale(20%);
+  transition: filter 0.4s, border-color 0.4s;
+}
+
+.hero-portrait img:hover {
+  filter: grayscale(0%);
+  border-color: var(--gold);
+}
+
+/* ═══ PROFILE IMAGE SECTION ═══ */
+.profile-image-section {
+  padding: 60px 8vw;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image-section img {
+  max-width: 500px;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--gold);
+  opacity: 0.9;
+  transition: opacity 0.4s;
+}
+
+.profile-image-section img:hover {
+  opacity: 1;
+}
 
 .hero-label {
   font-family: var(--heading);
@@ -1186,7 +1239,11 @@ footer .gss-credit { color: var(--red); }
   }
   .mobile-toggle { display: block; }
   .hero { padding: 100px 6vw 60px; }
+  .hero-content { flex-direction: column; gap: 40px; }
+  .hero-portrait { flex: 0 0 auto; max-width: 280px; margin: 0 auto; }
+  .hero-portrait img { height: 360px; }
   .section { padding: 80px 6vw; }
+  .profile-image-section img { max-width: 100%; height: 280px; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
 }
@@ -1242,15 +1299,20 @@ footer .gss-credit { color: var(--red); }
 <section class="hero" id="hero">
   <canvas id="heroCanvas"></canvas>
   <div class="hero-content">
-    <div class="hero-label">ASSISTANT PROFESSOR · WASHINGTON STATE UNIVERSITY</div>
-    <h1 class="hero-title">BIBHUSHANA<br><span class="accent">POUDYAL</span></h1>
-    <div class="hero-subtitle">GLOBAL SOUTH SOLIDARITIES</div>
-    <p class="hero-bio">
-      <strong>Nepali scholar, feminist rhetorician, and anti-colonial digital humanist.</strong>
-      Her research and teaching emerge from the intervening philosophies and praxes of
-      <strong>Internationalism and Global South Solidarities (GSS)</strong> — building decolonial
-      feminist knowledge systems as a transformative and dignified force within academia and beyond.
-    </p>
+    <div class="hero-text">
+      <div class="hero-label">ASSISTANT PROFESSOR · WASHINGTON STATE UNIVERSITY</div>
+      <h1 class="hero-title">BIBHUSHANA<br><span class="accent">POUDYAL</span></h1>
+      <div class="hero-subtitle">GLOBAL SOUTH SOLIDARITIES</div>
+      <p class="hero-bio">
+        <strong>Nepali scholar, feminist rhetorician, and anti-colonial digital humanist.</strong>
+        Her research and teaching emerge from the intervening philosophies and praxes of
+        <strong>Internationalism and Global South Solidarities (GSS)</strong> — building decolonial
+        feminist knowledge systems as a transformative and dignified force within academia and beyond.
+      </p>
+    </div>
+    <div class="hero-portrait">
+      <img src="images/bibhushana-4.jpg" alt="Bibhushana Poudyal">
+    </div>
   </div>
   <div class="hero-scroll-indicator">
     <span>SCROLL</span>
@@ -1730,6 +1792,10 @@ footer .gss-credit { color: var(--red); }
     </div>
   </div>
 </section>
+
+<div class="profile-image-section">
+  <img src="images/bibhushana-3.jpg" alt="Bibhushana Poudyal">
+</div>
 
 <footer>
   <p>© 2026 BIBHUSHANA POUDYAL</p>

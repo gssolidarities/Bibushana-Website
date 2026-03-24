@@ -118,6 +118,45 @@ a:hover { color: var(--gold); }
   background: var(--gray-dark);
 }
 
+.cv-profile-img {
+  display: block;
+  margin: 30px auto 0;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+  filter: grayscale(20%);
+  transition: filter 0.4s, border-color 0.4s;
+}
+
+.cv-profile-img:hover {
+  filter: grayscale(0%);
+  border-color: var(--gold);
+}
+
+.cv-end-img-wrap {
+  padding: 50px 8vw;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-end-img-wrap img {
+  max-width: 400px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--gold);
+  opacity: 0.9;
+  transition: opacity 0.4s;
+}
+
+.cv-end-img-wrap img:hover {
+  opacity: 1;
+}
+
 .cv-hero-name {
   font-family: var(--heading);
   font-size: clamp(48px, 8vw, 100px);
@@ -321,6 +360,7 @@ footer p {
   <p class="cv-hero-contact"><a href="mailto:bibhushana.poudyal@wsu.edu">bibhushana.poudyal@wsu.edu</a> | <a href="http://bibhushanapoudyal.com">http://bibhushanapoudyal.com</a></p>
   <p class="cv-hero-contact"><a href="https://orcid.org/0000-0002-9806-1746">https://orcid.org/0000-0002-9806-1746</a></p>
   <a href="Bibhushana Poudyal_CV.docx" class="download-btn" download>Download CV</a>
+  <img src="images/bibhushana-1.jpg" alt="Bibhushana Poudyal" class="cv-profile-img">
 </section>
 
 <!-- EDUCATION -->
@@ -921,6 +961,10 @@ footer p {
   <div class="cv-entry">Transnational Feminism, Global (South) Rhetorics, and Comparative Rhetorics</div>
   <div class="cv-entry">Visual Rhetorics and Rhetorical Photography</div>
 </section>
+
+<div class="cv-end-img-wrap">
+  <img src="images/bibhushana-2.jpg" alt="Bibhushana Poudyal">
+</div>
 
 <!-- FOOTER -->
 <footer>
