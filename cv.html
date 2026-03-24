@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Bibhushana Poudyal</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #000000;
+  --white: #FFFFFF;
+  --red: #C8102E;
+  --gold: #D4A843;
+  --red-dim: rgba(200, 16, 46, 0.15);
+  --gold-dim: rgba(212, 168, 67, 0.08);
+  --gray-text: #BBBBBB;
+  --gray-dark: #0A0A0A;
+  --gray-border: #1a1a1a;
+  --heading: 'Bebas Neue', sans-serif;
+  --body: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+::selection { background: var(--red); color: var(--white); }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) var(--ink);
+}
+
+body {
+  background: var(--ink);
+  color: var(--white);
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a { color: var(--red); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--gold); }
+
+/* ═══ SCROLL PROGRESS ═══ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  z-index: 10001;
+  transition: width 0.05s;
+}
+
+/* ═══ TOP NAV ═══ */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.nav-name {
+  font-family: var(--heading);
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--white);
+}
+
+.nav-name span { color: var(--red); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ═══ CV HEADER ═══ */
+.cv-hero {
+  padding: 140px 8vw 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-border);
+  background: var(--gray-dark);
+}
+
+.cv-hero-name {
+  font-family: var(--heading);
+  font-size: clamp(48px, 8vw, 100px);
+  letter-spacing: 3px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.cv-hero-name .accent { color: var(--red); }
+
+.cv-hero-title {
+  font-family: var(--body);
+  font-size: 18px;
+  color: var(--gray-text);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 12px;
+}
+
+.cv-hero-contact {
+  font-family: var(--body);
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+}
+
+.cv-hero-contact a { color: var(--red); }
+
+.download-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 40px;
+  font-family: var(--heading);
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--white);
+  background: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 0;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: transparent;
+  color: var(--red);
+}
+
+/* ═══ CV SECTIONS ═══ */
+.cv-section {
+  padding: 80px 8vw;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.cv-section:nth-child(even) {
+  background: var(--gray-dark);
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--red);
+  margin-bottom: 20px;
+}
+
+.section-label {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 6px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--heading);
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+.section-title .accent { color: var(--gold); }
+
+/* ═══ CV ENTRIES ═══ */
+.cv-entry {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gray-border);
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
+}
+
+.cv-entry:hover {
+  border-left-color: var(--red);
+}
+
+.cv-entry strong {
+  color: var(--white);
+}
+
+.cv-entry em, .cv-entry i {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.cv-subsection-title {
+  font-family: var(--heading);
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.cv-sub-subsection-title {
+  font-family: var(--heading);
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+
+.cv-entry-indent {
+  margin-bottom: 12px;
+  padding-left: 40px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.8);
+}
+
+.cv-entry-indent i, .cv-entry-indent em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.cv-entry-indent strong {
+  color: var(--white);
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--ink);
+  padding: 32px 8vw;
+  border-top: 1px solid var(--gray-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .cv-section { padding: 60px 6vw; }
+  .cv-hero { padding: 120px 6vw 50px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .cv-entry { padding-left: 14px; font-size: 15px; }
+  .cv-entry-indent { padding-left: 28px; font-size: 15px; }
+  .top-nav { padding: 14px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-name">BIBHUSHANA <span>POUDYAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">BACK TO MAIN</a></li>
+  </ul>
+</nav>
+
+<!-- CV HEADER -->
+<section class="cv-hero">
+  <h1 class="cv-hero-name">BIBHUSHANA <span class="accent">POUDYAL</span></h1>
+  <p class="cv-hero-title"><strong>Assistant Professor of English</strong></p>
+  <p class="cv-hero-title">Affiliate Faculty, Women, Gender, and Sexuality Studies</p>
+  <p class="cv-hero-title">Buchanan Distinguished Assistant Professor (2024 – 2026)</p>
+  <p class="cv-hero-title">Washington State University</p>
+  <p class="cv-hero-title">Pullman, WA, 99164</p>
+  <p class="cv-hero-contact"><a href="mailto:bibhushana.poudyal@wsu.edu">bibhushana.poudyal@wsu.edu</a> | <a href="http://bibhushanapoudyal.com">http://bibhushanapoudyal.com</a></p>
+  <p class="cv-hero-contact"><a href="https://orcid.org/0000-0002-9806-1746">https://orcid.org/0000-0002-9806-1746</a></p>
+  <a href="Bibhushana Poudyal_CV.docx" class="download-btn" download>Download CV</a>
+</section>
+
+<!-- EDUCATION -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">ACADEMIC BACKGROUND</div>
+  <h2 class="section-title">EDUCATION</h2>
+
+  <div class="cv-entry">
+    <strong>PhD English</strong> | University of Texas at El Paso (UTEP), 2023
+    <br>Dissertation Title: <i>Re-Rhetoricizing Global Souths Contrapuntally: Borderless Transnational Feminist Design Justice</i>
+  </div>
+  <div class="cv-entry">
+    <strong>MPhil English</strong> | Pokhara University, Institute of Advanced Communication Education Research Kathmandu (IACER), 2012
+  </div>
+  <div class="cv-entry">
+    <strong>MA English</strong> | Tribhuvan University, 2008
+  </div>
+</section>
+
+<!-- FACULTY APPOINTMENTS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">CAREER</div>
+  <h2 class="section-title">FACULTY <span class="accent">APPOINTMENTS</span></h2>
+
+  <div class="cv-entry">Washington State University (WSU), Pullman | Fall 2023 –</div>
+  <div class="cv-entry">Institute of Advanced Communication Education Research (IACER), Pokhara University | 2012 – 2017</div>
+  <div class="cv-entry">Central Institute of Science and Technology (CIST), Pokhara University | 2010 - 2011</div>
+  <div class="cv-entry">Bajra International College, Tribhuvan University | 2009 – 2010</div>
+</section>
+
+<!-- PEER REVIEWED PUBLICATIONS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">PUBLISHED WORK</div>
+  <h2 class="section-title">PEER REVIEWED <span class="accent">PUBLICATIONS</span></h2>
+
+  <div class="cv-subsection-title">Scholarly Monograph (1)</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2025). <i>Gendering South Asia: Rhetorical Non-Phallic Bodies in the Global Capital</i>. Routledge.</div>
+
+  <div class="cv-subsection-title">Edited Symposium (1)</div>
+  <div class="cv-entry">Manis, Kathryn, <strong>Bibhushana Poudyal</strong>, &amp; Patty Wilde. (2026). Emergency Archives: Investigating Rhetorical (Im) Possibility, Action, and the Impact of Precarious "Preservation" Under Crisis. <i>Rhetoric Review</i>, 1–88. https://doi.org/10.1080/07350198.2025.2604368</div>
+
+  <div class="cv-subsection-title">Journal Articles (5)</div>
+  <div class="cv-entry">Browne, Cheyenne, &amp; <strong>Poudyal, Bibhushana</strong>. (2026). Queerlesque: Anticolonial and anti-heteropatriarchal love and abjection in (rural) queer performance. <i>Peitho</i>, <i>28</i>(2). https://doi.org/10.37514/PEI-J.2026.28.2.11</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2025). Challenging Racism, Perpetuating Casteism: South Asian Moral Contradictions in the Diaspora. <i>Quarterly Journal of Speech</i>, <i>111</i>(3), 515–519. https://doi.org/10.1080/00335630.2025.2502338</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2021). "The "Nature" of Ethics While (Digitally) Archiving the Other." <i>[Special issue on Unsettling the Archives.] Across the Disciplines</i>, 18(1/2), 177-190. https://doi.org/10.37514/ATD-J.2021.18.1-2.14</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong> and Laura Gonzales. (2019). ""So You Want to Build a Digital Archive?" A Dialogue on Critical Digital Humanities Graduate Pedagogy." <i>JITP Pedagogy</i>. 15.</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2018). "Building Decolonial Digital Archives: Recognizing Complexities to Reimagine Possibilities." <i>Xchanges</i>, 13.2. https://xchanges.org/media/blogs/xchanges/14_1/poudyal_digitalarchives_bhformatted_4-9-19.pdf</div>
+
+  <div class="cv-subsection-title">Book Chapters (3)</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong> and Mala Rai (2023). "The Smell of the Other and Self-Alienation: A Mani(fold)festo of Race, Ethnicity, and Fear of One's Own "Haunting Cooking Odors."" In Eileen E. Schell, Dianna Winslow, and Pritisha Shrestha (Eds.) <i>Food Justice Activism and Pedagogies: Literacies and Rhetorics for Transforming Food Systems in Local and Transnational Contexts</i> (pp. 71-83). Lexington Books.</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2022). "Counter, Contradictory, and Contingent Digital-Storytelling through Theories-Praxes of Community-Based Participatory Research and Minimal Computing." In Crystal VanKooten &amp; Victor J. Del Hierro (Eds.), <i>Methods and Methodologies for Research in Digital Writing and Rhetoric</i> (205-224). WAC Clearinghouse. https://doi.org/10.37514/PRA-B.2022.1541.2.09</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>, Tetyana Zhyvotovska, Estefania Castillo, Nora Rivera, Ann Shivers-McNair, Joy Robinson, and Laura Gonzales. (2020). "Interrogating what we mean by "Making": Stories from Women who Make in Community." In Maggie Melos and Jennifer Nichols (Eds.), <i>Re-making the Library Makerspace: Critical Theories, Reflections, and Practices</i> (pp. 203-224). Library Juice Press.</div>
+
+  <div class="cv-subsection-title">Conference Proceedings (1)</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana.</strong> (2020). Building Digital Archive through Collaborative UX Research: Relationship-Building with the Community or Knowledge-Building about the Community? In Proceedings of the 38th ACM International Conference on Design of Communication (SIGDOC '20), October 03-04, 2020, Denton, TX, USA. ACM, New York, NY, USA, https://doi.org/10.1145/3380851.3416767</div>
+</section>
+
+<!-- WORK-IN-PROGRESS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">FORTHCOMING</div>
+  <h2 class="section-title">WORK-IN-<span class="accent">PROGRESS</span></h2>
+
+  <div class="cv-subsection-title">Edited Collection</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>, Kathryn Manis, Ma-Ya, and Patty Wilde [Editors]. <i>This is an Emergency (Archive): Recording, Remembering, Resisting, Refusing Under Catastrophe</i>. [In conversation with WAC Clearinghouse.]</div>
+
+  <div class="cv-subsection-title">Book Chapters</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. "Gaza as Sustainability Framework: Intellectual Praxis of Bearing Witness." In Kaylie Fougerousse, Joanna Gordon, &amp; Katie Silvester (Eds.), <i>Reconceptualizing Sustainability Literacies in the Community and Writing Classroom</i>. WAC Clearinghouse. [In Press]</div>
+
+  <div class="cv-subsection-title">Journal Articles</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. "Internationalist Guerrilla Feminism: Dismantling Empire in the Heart of the U.S. Higher Education." [<i>Special issue on Academia in Crisis: How Feminist Rhetorical Scholars Respond</i>.] Peitho. [Invited Publication; Under review]</div>
+  <div class="cv-entry">Browne, Cheyenne and <strong>Bibhushana Poudyal</strong>. "Dugout Canoes as Archives in Motion: Creative, Embodied, and Activist Storywork on the Snake River." [<i>Creative, Embodied, and Activist Approaches to Archival Research: Fostering a More Inclusive Future</i>.] <i>Writers: Craft and Context.</i> [Proposal accepted; Under review.]</div>
+
+  <div class="cv-subsection-title">Book Chapters</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. "Insurgent Digital Humanities with the Global South: Radically Undisciplining the Discipline." In Ujjwal Jana (Ed.), <i>Digital Humanities in the Global South: Practices, Challenges and Possibilities</i>. Palgrave Macmillan. Forthcoming. [Invited publication]</div>
+
+  <div class="cv-subsection-title">Documentary Making</div>
+  <div class="cv-entry"><strong>Lo, Buddha and </strong>Bibhushana Poudyal<strong> [Scriptwriters and Producers]. </strong><strong><i>Voices from Sailung: Bonpo Rituals and Tamang Indigenous Knowledge</i></strong>. [In a post-production stage]</div>
+</section>
+
+<!-- ADDITIONAL SCHOLARLY PROJECTS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">SCHOLARSHIP</div>
+  <h2 class="section-title">ADDITIONAL SCHOLARLY <span class="accent">PROJECTS</span></h2>
+
+  <div class="cv-subsection-title">Professional blogging (1)</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong>. (2019, December 1). "Digital Activism: Strategic, Inessential, and Inenarrable Alliances for an Ethical and Political Imperative." <i>Sweetland Digital Rhetoric Collaborative</i>. [Open Source]<br>[Selected as Editors' Choice for <i>Digital Humanities Now</i>]</div>
+
+  <div class="cv-subsection-title">Digital-Public Humanities Projects (2)</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana.</strong> <i>Rethinking South Asia from the Borderlands via Critical Digital A(na)rchiving: Politics, Im/Possible Ethics, and Anti/Aesthetics</i> (http://cassacda.com) | July 2018 – May 2023.</div>
+  <div class="cv-entry"><strong>Poudyal, Bibhushana</strong> (Research, Writing, Theorizing, &amp; Conceptualizing) and Rahul Malik (Coding &amp; Programming). <i>Global South Solidarities Anarchive</i> (http://gssolidarities.org)</div>
+
+  <div class="cv-subsection-title">Book Translation (1)</div>
+  <div class="cv-entry"><i>An Arduous Path: A Story of Tibetan Refugee's Struggle</i> by Shree Bhakta Khanal, Kathmandu: Shangri-La Pustak P. Ltd., 2020. [Co-translated with Karuna Karki, from Nepali to English]</div>
+
+  <div class="cv-subsection-title">Public Writing in Nepali Language (10 +)</div>
+  <div class="cv-entry">
+    <i>Aparaajeeta Parijaat</i> 2022 –<br>
+    &#x0938;&#x093E;&#x092E;&#x094D;&#x0930;&#x094D;&#x092F;&#x093E;&#x091C;&#x094D;&#x092F;&#x092C;&#x093E;&#x0926;&#x093F; &#x0937;&#x0921;&#x094D;&#x092F;&#x0928;&#x094D;&#x0924;&#x094D;&#x0930;&#x092E;&#x093E; &#x0939;&#x093F;&#x091C;&#x093E;&#x092C; [English Translation: Hijab in an Imperialist Conspiracy] | Jan 2023.<br>
+    &#x0938;&#x093E;&#x092E;&#x094D;&#x0930;&#x094D;&#x092F;&#x093E;&#x091C;&#x094D;&#x092F;&#x092C;&#x093E;&#x0926;&#x0932;&#x0947; &#x0932;&#x094D;&#x092F;&#x093E;&#x090F;&#x0915;&#x094B; "&#x0928;&#x093E;&#x0930;&#x0940;&#x0935;&#x093E;&#x0926;&#x0940; &#x092E;&#x0941;&#x0915;&#x094D;&#x0924;&#x093F;" &#x0915;&#x094B; &#x090F;&#x0909;&#x091F;&#x093E; &#x0915;&#x0925;&#x093E; [English Translation: A story of "Feminist Liberation" Brought About by Imperialism] | May 2022.
+  </div>
+  <div class="cv-entry">
+    <i>ThahaYatra</i> 2022 –<br>
+    &#x0938;&#x094C;&#x0928;&#x094D;&#x0926;&#x0930;&#x094D;&#x092F; &#x092A;&#x094D;&#x0930;&#x0924;&#x093F;&#x092F;&#x094B;&#x0917;&#x093F;&#x0924;&#x093E;: &#x0938;&#x0936;&#x0915;&#x094D;&#x0924;&#x0940;&#x0915;&#x0930;&#x0923; &#x0930; &#x0935;&#x0938;&#x094D;&#x0924;&#x0941;&#x0915;&#x0930;&#x0923;&#x0915;&#x094B; &#x0924;&#x093E;&#x0928;&#x093E;&#x0924;&#x093E;&#x0928;&#x092E;&#x093E; &#x0924;&#x0919;&#x094D;&#x0917;&#x094D;&#x0930;&#x093F;&#x0930;&#x0939;&#x0947;&#x0915;&#x094B; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x0935;&#x094D;&#x092F;&#x093E;&#x092A;&#x0940; &#x092A;&#x093F;&#x0924;&#x0943;&#x0938;&#x0924;&#x094D;&#x0924;&#x093E;&#x0924;&#x094D;&#x092E;&#x0915; &#x092A;&#x0941;&#x0901;&#x091C;&#x0940;&#x0935;&#x093E;&#x0926; [English Translation: "Beauty Pageants: Bolstering Global Patriarchal Capitalism in a Tug of War Between Empowerment and Objectification" | May 2022.]
+  </div>
+  <div class="cv-entry">
+    <i>Agnichakra</i> 2011 – 2015<br>
+    <i>Nagarik</i> web blog, 2009<br>
+    <i>Nagarik Daily</i>, 2009<br>
+    <i>Akshalok</i>, 2007<br>
+    <i>Kantipur</i>, 2007.
+  </div>
+</section>
+
+<!-- TEACHING EXPERIENCES -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">PEDAGOGY</div>
+  <h2 class="section-title">TEACHING <span class="accent">EXPERIENCES</span></h2>
+
+  <div class="cv-subsection-title">Washington State University, Pullman | Fall 2023 – present</div>
+  <div class="cv-entry">
+    Assistant Professor of English<br>
+    Affiliate Faculty of Women, Gender, and Sexuality Studies
+  </div>
+  <div class="cv-sub-subsection-title">Graduate Seminars</div>
+  <div class="cv-entry-indent">ENG 548: Seminar in Critical Cultural Theory: <i>AI, Biopolitics, and Engineered Oppression</i> | Spring 2026</div>
+  <div class="cv-entry-indent">ENG 548: Seminar in Critical Cultural Theory: <i>Archives, Rhetoricity of Technologies, and Anti-Oppressive Interventions</i> | Fall 2024<br>[Winner of the 2024 – 2025 Best Graduate Seminar of the Year Award]</div>
+  <div class="cv-entry-indent">ENG 591: Topics in Pedagogy: <i>Comparative Antiracist Pedagogies</i> | Spring 2024 [Winner of the 2023 – 2024 Best Graduate Seminar of the Year Award]</div>
+  <div class="cv-sub-subsection-title">Graduate Independent Studies</div>
+  <div class="cv-entry-indent">ENG: 590: Research in English Studies | Fall 2024 – Spring 2025</div>
+  <div class="cv-sub-subsection-title">Undergraduate Courses</div>
+  <div class="cv-entry-indent">ENG 362: Rhetorics of Racism | Spring 2024—Spring 2026</div>
+  <div class="cv-entry-indent">ENG 402: Technical and Professional Writing | Summer 2024</div>
+  <div class="cv-entry-indent">ENG 402: Technical and Professional Writing | Fall 2023</div>
+
+  <div class="cv-subsection-title">University of Texas at El Paso | Fall 2017 – Spring 2023</div>
+  <div class="cv-sub-subsection-title">Co-instructor | Graduate Course</div>
+  <div class="cv-entry-indent">Advanced Critical Theory | Spring, 2020 | Instructor: Prof. Kate Mangelsdorf</div>
+  <div class="cv-sub-subsection-title">Assistant Instructor | Undergraduate Courses</div>
+  <div class="cv-entry-indent">
+    RWS 1302: Rhetoric and Composition 2 | Hybrid | Spring 2023<br>
+    RWS 3359: Technical Writing | Online | Fall 2022<br>
+    RWS 1302: Rhetoric and Composition 2 | Hybrid | Spring 2022<br>
+    RWS 3359: Technical Writing | Online | Fall 2021<br>
+    RWS 3355: Workplace Writing | Online | Spring 2021<br>
+    RWS 3359: Technical Writing | Online | Fall 2020<br>
+    RWS 1302: Rhetoric and Composition 2 | Hybrid | Spring 2019 – Spring 2020<br>
+    RWS 1301: Rhetoric and Composition 1 | In-person | Spring 2018 – Fall 2018
+  </div>
+  <div class="cv-entry">Writing Center Consultant, Fall 2017</div>
+
+  <div class="cv-subsection-title">Institute of Advanced Communication Education Research Kathmandu (IACER) | 2012 – 2017</div>
+  <div class="cv-entry">Graduate Thesis Supervisor | MPhil and M.A. | Fall 2014 – Spring 2017</div>
+  <div class="cv-sub-subsection-title">Lecturer | Graduate Courses</div>
+  <div class="cv-entry-indent">
+    History of Ideas | 2017<br>
+    Literary Theory | 2016<br>
+    Global Literary Theory | 2015<br>
+    Western Tradition: Classicism to Modernism | 2014<br>
+    History of Ideas | 2013<br>
+    Literary Theory and Criticism | 2013
+  </div>
+  <div class="cv-sub-subsection-title">Co-instructor | Graduate Course</div>
+  <div class="cv-entry-indent">New Cosmopolitanism- South Asians in US | 2012 | Instructor: Prof. Arun Gupto</div>
+
+  <div class="cv-subsection-title">Central Institute of Science and Technology (CIST), Kathmandu | 2010 - 2011</div>
+  <div class="cv-sub-subsection-title">Lecturer | Undergraduate Courses</div>
+  <div class="cv-entry-indent">
+    Bachelor of Pharmacy: Technical Communication<br>
+    Bachelor of Public Health: Technical Communication
+  </div>
+
+  <div class="cv-subsection-title">Bajra International College, Kathmandu | 2009 – 2010</div>
+  <div class="cv-entry">Lecturer | Intermediate Level Courses: English</div>
+</section>
+
+<!-- ADMINISTRATIVE APPOINTMENTS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">LEADERSHIP</div>
+  <h2 class="section-title">ADMINISTRATIVE <span class="accent">APPOINTMENTS</span></h2>
+
+  <div class="cv-entry">Assistant Director of First-Year Composition | The University of Texas at El Paso | 2021 – 2023 (UTEP's FYC program won "2022-2023 CCCC Writing Program Certificate of Excellence")</div>
+  <div class="cv-entry">Assistant Director of Rhetoric and Writing Studies | The University of Texas at El Paso | 2020 – 2021</div>
+  <div class="cv-entry">Board Member | Institute of Advanced Communication Education Research (IACER), Pokhara University | 2015 – present</div>
+  <div class="cv-entry">Faculty Board and Honorary Overseas Digital Humanities Consultant | Center for Advanced Studies in South Asia (CASSA Research Center) | 2017 – 2019</div>
+  <div class="cv-entry">Honorary Overseas Digital Humanities Consultant | South Asian Foundation for Academic Research (SAFAR) | 2017 – 2019</div>
+  <div class="cv-entry">Writing Center Coordinator | Institute of Advanced Communication Education Research (IACER), Pokhara University | 2015 - 2016</div>
+</section>
+
+<!-- RESEARCH APPOINTMENTS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">RESEARCH</div>
+  <h2 class="section-title">RESEARCH <span class="accent">APPOINTMENTS</span></h2>
+
+  <div class="cv-entry">Multilingual UX Lab | University of Texas at El Paso | 2018 - 2019</div>
+  <div class="cv-entry">Women of Color in Computing Collaborative | 2018 – 2019</div>
+  <div class="cv-entry">Center for Advanced Studies in South Asia (CASSA Research Center) | 2017 – 2019</div>
+  <div class="cv-entry">South Asian Foundation for Academic Research (SAFAR) | 2017 – 2019</div>
+  <div class="cv-entry">Rethinking South Asian Studies | Advisors: Prof. Ashis Nandy, Prof. Gayatri Chakravorty Spivak (Columbia University), Prof. Arun Gupto (IACER), Dr. Robert Barnett (Columbia University) | 2013 - 2016.</div>
+</section>
+
+<!-- COMMUNITY ENGAGEMENT -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">SERVICE</div>
+  <h2 class="section-title">COMMUNITY <span class="accent">ENGAGEMENT</span></h2>
+
+  <div class="cv-entry">Organizer and Facilitator | Digital Storytelling and Global South Solidarities Fellowship Program: A South Asia Chapter | 2025 – 2026.</div>
+  <div class="cv-entry">Organizer and Facilitator | Forum for Global South Solidarities and Memory Justice: A Seminar-Workshop with Nepal | Spring 2025.</div>
+  <div class="cv-entry">Community member | Decolonial Solidarity Network Nepal | 2024 -</div>
+  <div class="cv-entry">Founder | Global Souths Solidarities Teaching and Learning Group | 2023-</div>
+  <div class="cv-entry">Vice President | <i>Sajha Sahayatri Nepal</i> [A Home for Under-17 Survivors of Sexual Violence] | 2022 – 2023.</div>
+  <div class="cv-entry">Editorial Board, Writer, and Translator | <i>Aparaajeeta Parijaat</i> [A Grassroot Feminist Magazine in Nepali language] | 2022 – 2023.</div>
+  <div class="cv-entry">Researcher and Writer | El Paso for Palestine @EPforPalestine | 2021 – 2022</div>
+  <div class="cv-entry">Executive Member, Researcher, and Writer | Academic Revival of Indigenous Studies and Education | University of Texas at El Paso | 2019 – 2023</div>
+  <div class="cv-entry">Member | Frontera Retórica - Student Chapter of the Rhetoric Society of America (RSA) | University of Texas at El Paso | 2018 –</div>
+  <div class="cv-entry">Trainer | Basic communication fundamentals for effective teachers–students' communication in English language | Timal Daada, Kavre District, Nepal | 2011.</div>
+  <div class="cv-entry">Editor | <i>Aadim 2001 Journal</i> | Released in Two days seminar on leadership challenge in First Rotaract Multi District Conference, Nepal | Organized by Rotaract International | 2001.</div>
+  <div class="cv-entry">Steering Committee Member | Two days seminar on leadership challenge in First Rotaract Multi District Conference, Nepal | Organized by Rotaract International | November 3-4, 2001.</div>
+  <div class="cv-entry">Member | Rotaract Club of Kathmandu Mid Town | 2000 – 2004.</div>
+  <div class="cv-entry">Volunteer and Researcher | Maiti Nepal: A Society Free from Trafficking of Children and Women | 2000.</div>
+</section>
+
+<!-- SCHOLARSHIPS, AWARDS, GRANTS, AND RECOGNITION -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">RECOGNITION</div>
+  <h2 class="section-title">SCHOLARSHIPS, AWARDS, GRANTS, <span class="accent">AND RECOGNITION</span></h2>
+
+  <div class="cv-subsection-title">External Awards</div>
+  <div class="cv-entry">Weiss 2025 Summer Fellow | College of Liberal Arts at Pennsylvania State University | Fully funded | 2025.</div>
+  <div class="cv-entry">Chairs' Memorial Scholarship Award | <i>Conference on College Composition and Communication</i> | 2022.</div>
+  <div class="cv-entry">Forum for the Future of Comparative, Postcolonial, and Decolonial Work: Graduate Student Funding Award | University of Utah | $200 | 2021.</div>
+  <div class="cv-entry">Rhetoric Society of America Graduate Research Development Award | $450 | 2021.</div>
+  <div class="cv-entry">Guest Presenter | Conference on Community Writing | Registration fee waiver | 2021.</div>
+  <div class="cv-entry">Dorrance D. Roderick Endowment Summer Fellowship | Roderick Foundation | $2,000 | 2020.</div>
+  <div class="cv-entry">National Endowment for the Humanities: Understanding Digital Culture Institute | $1,250 | 2020.</div>
+  <div class="cv-entry">ATTW Amplification Award | $500 | 2020</div>
+  <div class="cv-entry">ATTW Graduate Research Award | $500 | 2020.</div>
+  <div class="cv-entry">ATTW Research Methods Workshop Scholarship | $200 | 2020.</div>
+  <div class="cv-entry">Scholars for the Dream Travel Award | <i>Conference on College Composition and Communication</i> | $1,000 | 2019.</div>
+  <div class="cv-entry"><strong><i>User Experience Fellowship</i></strong> | Kapor Center and the Coalition of Women of Color in Computing | $2,500 | 2019.</div>
+  <div class="cv-entry">Emerging Woman Educator in Nepal | "Women's Leadership and Networking Reception" by the then US Ambassador to Nepal, Alaina B. Teplitz | 2017.</div>
+  <div class="cv-entry">Finalist of International Open Poetry Contest | The International Library of Poetry | USA | 2002.</div>
+
+  <div class="cv-subsection-title">Internal Awards</div>
+
+  <div class="cv-sub-subsection-title">Washington State University</div>
+  <div class="cv-entry">Faculty Merit Prize | College of Arts and Sciences | $8,000 | 2025 – 2026.</div>
+  <div class="cv-entry">WGSS Interdisciplinary Cross-listed Course Proposal and Revision Grants for <i>ENG-362: The Rhetorics of Racism</i> | $1,500 | 2025.</div>
+  <div class="cv-entry">Buchanan Distinguished Assistant Professorship Award | $12,000 | 2025 – 2026.</div>
+  <div class="cv-entry">New Faculty Seed Grant | Project Title: <i>Digital Storytelling and Global South Solidarities: Justice-Driven Open Scholarship in Humanities</i> | $18,349 | 2025 – 2026.</div>
+  <div class="cv-entry">Best Graduate Seminar of the Year Award ["ENG 548: Seminar in Critical Cultural Theory: <i>Archives, Rhetoricity of Technologies, and Anti-Oppressive Interventions</i>] | Voted by English Graduate Organization| 2024 – 2025.</div>
+  <div class="cv-entry">Best Graduate Seminar of the Year Award [ENG-591: Topics in Pedagogies: <i>Comparative Antiracist Pedagogies</i>] | Voted by English Graduate Organization| 2023 – 2024.</div>
+  <div class="cv-entry">Buchanan Distinguished Assistant Professorship Award | $12,000 | 2024 – 2025.</div>
+
+  <div class="cv-sub-subsection-title">The University of Texas, El Paso</div>
+  <div class="cv-entry">Juergen &amp; Phyllis Hunter Strauss Fellowships | University of Texas at El Paso | $375 | 2023.</div>
+  <div class="cv-entry">Summer Research Funding | University of Texas at El Paso | $4,400 | 2022. [Selected for the award based on the feedback from the RWS program]</div>
+  <div class="cv-entry">CGS Humanities Coalition Grant Writing Project Fellowship | University of Texas at El Paso | $750 | 2022.</div>
+  <div class="cv-entry">Graduate School Summer Research Award | University of Texas at El Paso | $5,000 | 2021.</div>
+  <div class="cv-entry">RWS Nuestra Gente Research Award | Department of English | University of Texas at El Paso | $1,000 | 2020.</div>
+  <div class="cv-entry">The Frank B. Cotton Trust Scholarship | University of Texas at El Paso | $1,000 | 2020-2021.</div>
+  <div class="cv-entry">The Frank B. Cotton Trust Scholarship | University of Texas at El Paso | $1,000 | 2019-20.</div>
+  <div class="cv-entry">Graduate School Travel Grant | University of Texas at El Paso | $880 | 2019.</div>
+  <div class="cv-entry">Baker Hernandez Travel Grant | University of Texas at El Paso | 2018 - 2019.</div>
+  <div class="cv-entry">Outstanding RWS PhD Student in Research Award | Department of English | University of Texas at El Paso | 2018.</div>
+  <div class="cv-entry">The Frank B. Cotton Trust Scholarship | University of Texas at El Paso | $1,000 | 2018-19.</div>
+  <div class="cv-entry">Diana Natalicio Fellowship | Excellent Performance as an Entering Doctoral Student | University of Texas at El Paso | $2,500 | 2017.</div>
+
+  <div class="cv-sub-subsection-title">Institute of Advanced Communication Education Research, Nepal (IACER)</div>
+  <div class="cv-entry">Dean's List | MPhil Degree | Pokhara University, Institute of Advanced Communication Education Research Kathmandu (IACER) | 2012.</div>
+  <div class="cv-entry">Partial Academic Scholarship | MPhil Degree | Pokhara University, Institute of Advanced Communication Education Research Kathmandu (IACER) | 2009.</div>
+
+  <div class="cv-sub-subsection-title">Tribhuvan University, People's Campus, Nepal</div>
+  <div class="cv-entry">Gold Medal | Undergraduate Degree | Tribhuvan University, People's Campus | 2003.</div>
+  <div class="cv-entry">Full Academic Scholarship | Undergraduate Degree | Tribhuvan University, People's Campus | 2001.</div>
+  <div class="cv-entry">Gold Medal | Intermediate Degree | Tribhuvan University, People's Campus | 2000.</div>
+  <div class="cv-entry">Full Academic Scholarship | Intermediate Degree | Tribhuvan University, People's Campus | 1999.</div>
+</section>
+
+<!-- SELECTED MEDIA MENTIONS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">MEDIA</div>
+  <h2 class="section-title">SELECTED MEDIA <span class="accent">MENTIONS</span></h2>
+
+  <div class="cv-entry">Featured as the youngest Nepali Epic Writer in English Language in the following Nepali and South Asian media for the unpublished long poem, <i>That Twelve Hour</i>:</div>
+
+  <div class="cv-sub-subsection-title">Television:</div>
+  <div class="cv-entry-indent">
+    Nepal Television: Program <i>Pratibha Parichaya</i> | 11th October 1999<br>
+    Nepal Television: Program <i>Achel</i> | 22nd December 1999<br>
+    Young Asia Television | 2000
+  </div>
+
+  <div class="cv-sub-subsection-title">Magazines and Newspaper:</div>
+  <div class="cv-entry-indent">
+    <i>Jana Prahar,</i> No. 9 | June 11, 2002.<br>
+    <i>Bimochan</i>, Bimarsha Publication Pvt. Ltd., No. 5 | May, 2001.<br>
+    <i>Muna</i>, Gorkha Patra Sansthan, No. 110 | February, 2000.<br>
+    <i>Darpan</i>, No. 8 | December 18, 2000.<br>
+    <i>Wave</i>, Himalmedia Pvt. Ltd., no.53 | May, 2000.<br>
+    <i>Kantipur,</i> Kantipur Publications Pvt. Ltd. | December 18, 1999.<br>
+    <i>Gorakhapatra,</i> GorakhaPatra Sansthan | December 18, 1999.<br>
+    <i>The Himalayan Times</i>, Himalmedia Pvt. Ltd., December 18, 1999.
+  </div>
+</section>
+
+<!-- THESIS AND DISSERTATION COMMITTEES -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">MENTORSHIP</div>
+  <h2 class="section-title">THESIS AND DISSERTATION <span class="accent">COMMITTEES</span></h2>
+
+  <div class="cv-subsection-title">Washington State University</div>
+
+  <div class="cv-sub-subsection-title">DEPARTMENT OF ENGLISH</div>
+
+  <div class="cv-sub-subsection-title">Committee Chair:</div>
+  <div class="cv-sub-subsection-title">MASTER'S THESIS</div>
+  <div class="cv-entry">Grace No. <i>Literary analysis of race/gender in media and methods for solidarity in activist groups</i>. (Literature; Anticipated graduation in 2026).</div>
+  <div class="cv-entry">Daman Khalid. <i>World literature and the contemporary Pakistani Anglophone Literature</i>. (Literature; Graduated in 2025).</div>
+  <div class="cv-entry">Myra Henderson. <i>Black Memoir as Intellectual Frameworks: Imagining A Revolutionary and Radical Shift in Society</i>. (Literature; Graduated in 2025).</div>
+  <div class="cv-entry">Genoveva Vega Gastelum. <i>Rethinking Linguistic Justice Through Buen Vivir: Revitalizing My Mixteco And Its Integration to Rhetoric and Composition</i>. (Rhetoric and Writing Studies; Graduated in 2025).</div>
+
+  <div class="cv-sub-subsection-title">Second Reader/Committee Member:</div>
+  <div class="cv-sub-subsection-title">DOCTORAL DISSERTATION</div>
+  <div class="cv-entry">Corita Fernando. <i>Labor and Aesthetics</i>. (Rhetoric and Writing Studies; Anticipated graduation: Ph.D. – 2027).</div>
+
+  <div class="cv-sub-subsection-title">MASTER'S THESIS</div>
+  <div class="cv-entry">Briggette Hinnant. <i>How to Mitigate Generative AI in FYC Classes</i>. (Rhetoric and Writing Studies; M.A. Anticipated graduation – 2026).</div>
+  <div class="cv-entry">Kevin Eloy Trujillo. <i>Rhetoric of Justice in War</i>. (Rhetoric and Writing Studies; M.A. graduated in 2025).</div>
+
+  <div class="cv-sub-subsection-title">INDIVIDUAL INTERDISCIPLINARY DOCTORAL PROGRAM</div>
+  <div class="cv-sub-subsection-title">Committee Chair:</div>
+  <div class="cv-entry">Cheyenne Browne. <i>Relational Water Knowledges and Liberatory Sciences: Charting Anticolonial River Futures</i>. (Anticipated graduation: PhD – 2028).</div>
+
+  <div class="cv-subsection-title">Institute of Advanced Communication Education Research (IACER)</div>
+  <div class="cv-sub-subsection-title">MPHIL THESIS CHAIR:</div>
+  <div class="cv-entry">Poshta Hari Baral (MPhil – 2017). <i>South Asian diasporic women's bodily battle in the West for self-discovery in Manju Kapur's the Immigrant and Taslima Nasrin's French Lover</i>.</div>
+  <div class="cv-entry">Suresh Lohani (MPhil – 2016). <i>LGBTI in Nepal, Pakistan, and India: Law, religion, and individuals</i>.</div>
+  <div class="cv-entry">Gita Devi Luitel (MPhil – 2016). <i>Rhetoric of woman empowerment in Jhumpa Lahari's Lowland</i>.</div>
+  <div class="cv-entry">Arjun Dauliya (MPhil – 2016). <i>Chronicling the history of brutal past: Comparative study of poetry of witness of Calolyn Forche and Krishan Sen Ichchhuk</i>.</div>
+  <div class="cv-entry">Padam Prasad Acharya (MPhil – 2016). <i>Racism in J.M. Coetzee's Youth and Life and Times of Michael K</i>.</div>
+  <div class="cv-entry">Sabita Tumbabo (MPhil – 2015). <i>Resistance against colonial representation, gender domination: Study of Wide Sargasso Sea and Jane Eyre</i>.</div>
+  <div class="cv-entry">Shreeram Silwal (MPhil – 2015). <i>Rhetorical analysis of Barack Obama discourse: A discourse for racial harmony in "post-racial" America</i>.</div>
+  <div class="cv-entry">Radha Devi Sharma (MPhil – 2014). <i>Religious texts as human management: Narrating and prescribing motivation, knowledge, and skill for women</i>.</div>
+  <div class="cv-entry">Sharada Kumari Poudel (MPhil – 2014). <i>Gender Stereotypes in World of Women and Nari: A Critical Discourse Analysis</i>.</div>
+  <div class="cv-entry">Gopal Adhikari (MPhil – 2014). <i>Resistance of women as a form of identity and power negotiation in Chandalika and Malini.</i></div>
+
+  <div class="cv-sub-subsection-title">M.A. THESIS CHAIR:</div>
+  <div class="cv-entry">Aayushma Sharma (M.A. – 2014). <i>Fallen women in Victorian fiction: The study of Tess of the D'Urbervilles.</i></div>
+  <div class="cv-entry">Kamal Raj Adhikari (MA – 2014). <i>Position of Afghan women in A Thousand Splendid Suns</i>.</div>
+</section>
+
+<!-- GRADUATE INDEPENDENT STUDIES SUPERVISION -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">SUPERVISION</div>
+  <h2 class="section-title">GRADUATE INDEPENDENT STUDIES <span class="accent">SUPERVISION</span></h2>
+
+  <div class="cv-subsection-title">Washington State University</div>
+  <div class="cv-entry">Daman Khalid. <i>Pluralistic Local Pakistani Literatures Against Islamophobia, Colonialism, And Bourgeois Nationalism</i> | Fall 2024</div>
+  <div class="cv-entry">Valanci Villa. <i>Antiracist Pedagogies</i> | Spring 2025</div>
+</section>
+
+<!-- MENTORING -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">GUIDANCE</div>
+  <h2 class="section-title">MENTORING</h2>
+
+  <div class="cv-subsection-title">Washington State University</div>
+  <div class="cv-entry">Anastacia Garcia. On their PhD research project | 2025 – 2026.</div>
+  <div class="cv-entry">Kevin Eloy Trujillo. On their PhD research project | 2025 – 2026.</div>
+</section>
+
+<!-- PEER REVIEW EXPERIENCES -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">REVIEWING</div>
+  <h2 class="section-title">PEER REVIEW <span class="accent">EXPERIENCES</span></h2>
+
+  <div class="cv-entry"><i>Journal of Cultural Analytics</i> | 2025.</div>
+  <div class="cv-entry"><i>Quarterly Journal of Speech</i> | 2025.</div>
+  <div class="cv-entry"><i>Practices &amp; Possibilities</i> book series, WAC Clearinghouse | 2025 –</div>
+  <div class="cv-entry"><i>Composition Forum</i> | 2023 – 2024.</div>
+  <div class="cv-entry"><i>Peitho Journal</i> | 2021 –</div>
+  <div class="cv-entry"><i>Debates in Digital Humanities Pedagogy</i> edited by Brian Croxall and Diane Jakacki | 2020.</div>
+  <div class="cv-entry"><i>Methods and Methodologies for Research in Digital Writing and Rhetoric</i> edited by Crystal VanKooten and Victor J. Del Hierro | 2020.</div>
+</section>
+
+<!-- INVITED TALKS, LECTURES, AND WORKSHOPS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">PRESENTATIONS</div>
+  <h2 class="section-title">INVITED TALKS, LECTURES, <span class="accent">AND WORKSHOPS</span></h2>
+
+  <div class="cv-entry">Speaker. "Internationalist and Intersectional Feminisms." FemScouts - WSU Women's Center. October 6, 2025.</div>
+  <div class="cv-entry">Panelist. "Faculty Research Panel on Research Methods and Methodologies." English Department, WSU. April 23, 2025.</div>
+  <div class="cv-entry">Keynote Speaker. "Shifting Perspectives: Transnational Feminisms and Liberation." WSU Graduate Women of Color Alliance. April 1, 2025.</div>
+  <div class="cv-entry">Speaker. "CAH Seminar Series for First-Gen Graduate Students." Center for Arts and Humanities, WSU. March 28, 2025.</div>
+  <div class="cv-entry">Speaker. "EGO Seminar on Academic Conferences." WSU English Graduate Organization. November 15, 2024.</div>
+  <div class="cv-entry">Panelist. "Free Speech Panel for Faculty." WSU Pullman Community Equity Response Team. September 12, 2024.</div>
+  <div class="cv-entry">Respondent to Keynote Speakers. "Connecting Communities: The First Interdisciplinary Arts and Humanities Conference." Center for Arts and Humanities, WSU. April 26, 2024.</div>
+  <div class="cv-entry">"Interdisciplinary Dialogue: Borders and Bridges." Office of Research Advancement and Partnerships Working Group on Advancing Arts &amp; Humanities, WSU. March 27, 2024.</div>
+  <div class="cv-entry">Speaker. "CAH Seminar Series for First-Gen Graduate Students." Center for Arts and Humanities, WSU. February 23, 2024.</div>
+  <div class="cv-entry">"Impossible Digital Archives: Ethics, Justice, and the Other." Department of English, UTEP. November 9, 2021.</div>
+  <div class="cv-entry">"Building a Collaborative Network to Support Women of Color in User-Experience and Technology Design." Invited Keynote Presentation. <i>Special Interest Group on the Design of Communication</i> (SIGDOC). October 7, 2020. [With the Women of Color in Computing Collaborative]</div>
+  <div class="cv-entry">"Critical Digital Humanities and Participatory Design: A Workshop Series in Kathmandu, Nepal" | Co-organized with SAFAR &amp; Co-conducted with Dr. Laura Gonzales | South Asian Foundation for Academic Research (SAFAR) | Partially Funded by United States Education Foundation- Fulbright | Kathmandu, June – July 2019.</div>
+  <div class="cv-entry">"Critical Digital Humanities and Participatory Design" | Co-conducted with Dr. Laura Gonzales | Limbuwan Study Center | Kathmandu, June 2019.</div>
+  <div class="cv-entry">"Theory, Philosophy, and Cultural Criticism" | Institute of Advanced Communication Education Research | Graduate Seminars | 2013 – 2017.</div>
+  <div class="cv-entry">"A Seminar-Workshop on Postcolonial Discourses: Locating Postcolonialism in South Asian Context through the Nature of Theory" | Co-conducted with Prof. Arun Gupto | Institute of Advanced Communication Education Research | For Graduate Faculties, Students, and Researchers across Universities in Nepal | Kathmandu, April – May 2014.</div>
+  <div class="cv-entry">"A General Survey on British and American Fiction," | Graduate Seminar | St. Xavier's College, Kathmandu | Visiting Lecturer | January, 2010.</div>
+  <div class="cv-entry">"Works of Taslima Nasrin" | Undergraduate Seminar | National College: Centre for Development Studies | Kathmandu, 2010.</div>
+  <div class="cv-entry">"Basics of Academic Writing" | Undergraduate Seminar | Sushma Memorial College, Itahari | June, 2010.</div>
+</section>
+
+<!-- REFEREED CONFERENCE WORKSHOPS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">WORKSHOPS</div>
+  <h2 class="section-title">REFEREED CONFERENCE <span class="accent">WORKSHOPS</span></h2>
+
+  <div class="cv-entry">"Remixing the Writing Classroom for Social-Global Justice" | <i>Conference on College Composition and Communication</i> | Baltimore, MA. | April 2025. [With Prof. Lauren Rosenberg]</div>
+</section>
+
+<!-- REFEREED CONFERENCE PRESENTATIONS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">CONFERENCES</div>
+  <h2 class="section-title">REFEREED CONFERENCE <span class="accent">PRESENTATIONS</span></h2>
+
+  <div class="cv-entry">"Emergency Archives: Re-rhetoricizing Dignity as Contingent Upon Anti-Oppressive Praxis" | <i>Rhetoric Society of America</i> | Portland, OR | May 2026 [Forthcoming].</div>
+  <div class="cv-entry">"Trauma in Everyday Archives: Exposing the "Crooked" Rhetoric of Oppression" | <i>Rhetoric Society of America</i> | Portland, OR | May 2026 [Forthcoming].</div>
+  <div class="cv-entry">"Emergency Archives: A Radical Call for an Internationalist-Intersectional Shift in Feminist Rhetorical Praxis" | <i>Feminisms and Rhetorics Conference</i> | Durham, NH | July 2025.</div>
+  <div class="cv-entry">"Gaza as Method: An Actionable Decolonial Feminist Intellectual Praxis of Bearing Witness to Genocide" | <i>Feminisms and Rhetorics Conference</i> | Durham, NH | July 2025.</div>
+  <div class="cv-entry">"Transforming Academia with Global Souths through Transnational Feminist Design Justice Frameworks" | <i>Conference on Community Writing</i> | Denver, CO. | October 2023.</div>
+  <div class="cv-entry">Roundtable discussion of "Food Justice Rhetorics and Literacies: Practicing Hope and Growing Change Inside and Outside the Writing Classroom" | <i>Conference on Community Writing</i> | Denver, CO. | October 2023.</div>
+  <div class="cv-entry">"Counter-storytelling: A feminist antiracist approach to dismantle colonial archival logics" | <i>Feminisms and Rhetorics Conference</i> | Atlanta, GA. | September – October 2023. [Panel Presentation]</div>
+  <div class="cv-entry">Roundtable discussion of "Reckoning with Oppressive Food Systems: Dismantling Hierarchies and Disrupting Power Structures through Antiracist Food Justice Activism" | <i>Feminisms and Rhetorics Conference</i> | Atlanta, GA. | September – October 2023.</div>
+  <div class="cv-entry">Roundtable discussion of "What's Next—Future Research and Assessment of Curricular Innovation" | <i>Center for Faculty Leadership and Development</i> | El Paso, TX. | August 2022. [With Composition Committee at UTEP]</div>
+  <div class="cv-entry">"Reinvigorating First-Year Composition Through Curriculum Redesign &amp; Implementation" | <i>Center for Faculty Leadership and Development</i> | El Paso, TX. | August 2022. [Panel presentation with Composition Committee at UTEP]</div>
+  <div class="cv-entry">"Digital storytelling through community praxis: Possibilities of subverting epistemic violence of colonial discourses" | <i>Computers &amp; Writing</i> | Greenville, NC. | May 2022.</div>
+  <div class="cv-entry">"Rethinking Theories and Praxis of Technical and Professional Communication with Diverse Communities Through Design Justice Frameworks" | <i>Conference on College Composition and Communication</i> | Chicago, IL. | March 2022.</div>
+  <div class="cv-entry">"Weaving narratives digitally in a South Asian context through community praxis: Precarities, complexities, and possibilities" | <i>Conference on Community Writing</i> | Washington, D.C.| October 2021.</div>
+  <div class="cv-entry">"Rethinking South Asia via UX and Participatory Design: A Methodology for Building Dialogic Rooms in Digital Archives" | Graduate Research Award Panel | <i>Association of Teachers of Technical Writing</i> | June 2021.</div>
+  <div class="cv-entry">"Building Digital Archive through Collaborative UX Research: Relationship-Building <i>with</i> the Community or Knowledge-Building <i>about</i> the Community?" | Special Interest Group on Design of Communication (SIGDOC) | Denton, TX | 2020.</div>
+  <div class="cv-entry">"Critical Digital Humanities: Theories and Praxes to Learn to Work with and Learn from a <i>Space of Difference</i>" | <i>Keystone DH</i> | Philadelphia, PA | July | 2020. [Conference subsequently canceled due to COVID–19 pandemic]</div>
+  <div class="cv-entry">"An Invitation to Convince and a Punishment for Provoking: The "Nature" of Hospitality in Academia?" | <i>Rhetoric Society of America</i> | Portland, OR | May 2020. [Conference subsequently canceled due to COVID–19 pandemic]</div>
+  <div class="cv-entry">"Rethinking South Asia via UX and Participatory Design: A Methodology for Building Dialogic Rooms in Digital Archives" | Graduate Research Award Panel | <i>Association of Teachers of Technical Writing</i> | Milwaukee, WI | March, 2020. [Conference transferred to 2021 due to COVID-19 pandemic]</div>
+  <div class="cv-entry">"Building (with) Technology Critically and Ethically: Resistance against Traditional Privileged Non/Pedagogical Structure." | <i>Association of Teachers of Technical Writing</i> | Milwaukee, WI | March, 2020. [Conference transferred to 2021 due to COVID-19 pandemic]</div>
+  <div class="cv-entry">"Menstruation: A "bloody and smelly" leakage threatening a patriarchal border between public and private spaces." | <i>Rocky Mountain Modern Language Association</i> | El Paso, TX | October, 2019.</div>
+  <div class="cv-entry">"Digital Archiving Against the Grain: Possibilities and Complexities." | <i>Conference on College Composition and Communication</i> | Pittsburgh, PA | March, 2019.</div>
+  <div class="cv-entry">"Critical Digital Archiving: A Non-Hierarchical Cross-Disciplinary Collaboration." | <i>CASSA Annual Conference on Asian Studies</i> | Kathmandu | Type of Presentation –Digital | October, 2018.</div>
+  <div class="cv-entry">"What is (or is There) a Female Body?" | <i>Rhetoric and Religion in 21st Century: Possibilities, Publics, Partnerships</i> | Knoxville, TN | October, 2018.</div>
+  <div class="cv-entry">"Digital Archiving Against (and Along?) the Grain." | <i>NSA's Annual International Conference: Transforming Lives through Technology and Empowerment</i> | Las Cruces, NM | March 2017.</div>
+  <div class="cv-entry">"Rape and Bio-Invisibility." <i>Rethinking South Asian Studies: New Regionalism</i> | Kathmandu, February, 2013.</div>
+</section>
+
+<!-- WORKSHOPS COORDINATED -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">COORDINATION</div>
+  <h2 class="section-title">WORKSHOPS <span class="accent">COORDINATED</span></h2>
+
+  <div class="cv-entry">"Crossing Colonial-Imperial Borders: Designing the Writing Program with Global Souths" | FYC program | UTEP | April 2023.</div>
+  <div class="cv-entry">"Diversity Statement" | FYC program | UTEP | October 2022.</div>
+  <div class="cv-entry">"Nepali Cultural Studies II: Emotion, Memory, and Fear" | Conducted by Prof. Arun Gupto | IACER | Sept - October 2016.</div>
+  <div class="cv-entry">"Rethinking South Asian Studies" | Conducted by Prof. Gayatri Spivak (Columbia University), Prof. Arun Gupto (IACER), Prof. Robert Barnett (Columbia University), and Charles Armstrong (Columbia University) | Kathmandu | August 2016.</div>
+  <div class="cv-entry">"Nepali Cultural Studies- Series I" | Conducted by Prof. Arun Gupto | IACER | July 2016.</div>
+  <div class="cv-entry">"Critical Theory and Practice for Teaching Undergrad" | Coordinator | Conducted by Prof. Arun Gupto and Dr. Puspa Damai | IACER | April 2015.</div>
+</section>
+
+<!-- PROFESSIONAL DEVELOPMENT -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">DEVELOPMENT</div>
+  <h2 class="section-title">PROFESSIONAL <span class="accent">DEVELOPMENT</span></h2>
+
+  <div class="cv-entry">Decolonizing Comparative Global Rhetorics | Seminar led by Dr. Romeo García, Prof. LuMing Mao, and Dr. Hua Zhu | RSA, 10th Biennial Summer Institute | May 22 – 25, 2023</div>
+  <div class="cv-entry">CGS Humanities Coalition Grant Writing Project | University of Texas at El Paso | Fall 2021 – Spring 2022.</div>
+  <div class="cv-entry">Forum for the Future of Comparative, Postcolonial, and Decolonial Work | University of Utah | Oct 1–2, 2021.</div>
+  <div class="cv-entry">Minimal Computing | Penn DreamLab | Instructors: Dr. Alex Gil (Columbia University) &amp; Marii Nyrop (New York University) | June 14 – 17, 2021</div>
+  <div class="cv-entry">Rhetorical Ethics in an Unjust World | Seminar led by Prof. Diane Davis &amp; Prof. Nathan Stormer | RSA, 9th Biennial Summer Institute | May 24 – 28, 2021</div>
+  <div class="cv-entry">Bordering Rhetorics: Mobility, Containment, &amp; the Boundaries of Critical Rhetoric | Workshop led by Dr. J. David Cisneros, Dr. Lisa Flores, &amp; Dr. Michael Lechuga | RSA, 9th Biennial Summer Institute | June 1- 4, 2021</div>
+  <div class="cv-entry">NEH Understanding Digital Culture: Humanist Lenses for Internet Research | University of Central Florida | Instructors: Dr. Anastasia Salter &amp; Dr. Mel Stanfill | June, 2020.</div>
+  <div class="cv-entry">Research Network Forum | "Rethinking South Asia via Critical Digital A(na)rchiving: An Im/possibility of Ethics" | Work-in-Progress | RSA | May, 2020. [Conference subsequently canceled due to COVID–19 pandemic]</div>
+  <div class="cv-entry">Building Alternative Archives: Opportunities and Disruptions in Archival Methods | ATTW | March, 2020. [Workshop subsequently canceled due to COVID–19 pandemic]</div>
+  <div class="cv-entry">Digital Editions: Start to Finish–Programming4Humanists | Instructors: Dr. Laura Mandell &amp; Dr. Diane Jakacki | Center of Digital Humanities Research, Texas A &amp; M | January - March | 2020.</div>
+  <div class="cv-entry">Research Network Forum | "Digital Archiving Against the Grain: Possibilities and Complexities" | Work-in-Progress | CCCC | March, 2019.</div>
+  <div class="cv-entry">Qualitative Research Network | "Digital Archiving Against the Grain: Possibilities and Complexities" | Work-in-Progress | CCCC | March, 2019.</div>
+  <div class="cv-entry">Digital Dissertation Workshop | University of Texas at El Paso | October, 2018.</div>
+  <div class="cv-entry">Mapping Mexican History: Digital Scholarship Workshops | University of Texas at El Paso | April 27, 2018.</div>
+  <div class="cv-entry">Teaching Online Academy | University of Texas at El Paso | October, 2017</div>
+  <div class="cv-entry">Nepal Digital Humanities Seminar Institute | Prof. Scott Kleinman (Director of CSUN Center for the Digital Humanities) | Institute of Advanced Communication Education Research Kathmandu (IACER) | June, 13- 28, 2017.</div>
+  <div class="cv-entry">Rethinking South Asian Studies | Mentors: Prof. Gayatri Spivak (Columbia University), Prof. Arun Gupto (IACER), Prof. Robert Barnett (Columbia University), and Prof. Charles Armstrong (Columbia University) | Kathmandu | August, 2016.</div>
+  <div class="cv-entry">Rethinking South Asian Studies | Mentors: Prof. Gayatri Spivak (Columbia University), Prof. Shreedhar Lohani (IACER), Prof. Arun Gupto (IACER), Prof. Robert Barnett (Columbia University), and Prof. Benjamin Conisbee Baer (Princeton University) | Kathmandu | July, 2014.</div>
+  <div class="cv-entry">New Regionalism | Mentors: Prof. Gayatri Spivak (Columbia University), Prof. Shreedhar Lohani (IACER), Prof. Arun Gupto (IACER), and Prof. Robert Barnett (Columbia University) | Kathmandu | February, 2013.</div>
+</section>
+
+<!-- PROFESSIONAL SERVICE TO THE DISCIPLINE -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">DISCIPLINE SERVICE</div>
+  <h2 class="section-title">PROFESSIONAL SERVICE <span class="accent">TO THE DISCIPLINE</span></h2>
+
+  <div class="cv-entry">Assessor | Social Sciences and Humanities Research Council of Canada (SSHRC) | Government of Canada | 2025 – [Invited]</div>
+  <div class="cv-entry">Mentor | Online Mentoring Program | Coalition of Feminist Scholars in the History of Rhetoric and Composition | 2025 – 26.</div>
+  <div class="cv-entry">Advisory Board | <i>The Journal of Multimodal Rhetorics</i> | 2024 –</div>
+  <div class="cv-entry">Association of Rhetoric &amp; Writing Reorganization Committee (ARWS) | 2023 –</div>
+  <div class="cv-entry">2025 CCCC Lavender Rhetorics Award for Excellence in Queer Scholarship Selection Committee | Conference on College Composition and Communication | 2024 – 2025.</div>
+  <div class="cv-entry">Inclusion, Diversity, Equity &amp; Access (IDEA) Committee | Rhetoric Society of America | 2023 – 2025.</div>
+  <div class="cv-entry">Stage 1 Reviewer | 2022 CCCC | 2021</div>
+  <div class="cv-entry">Assistant Editor | <i>Best of the Journals in Rhetoric and Composition</i> | 2020 – 2021</div>
+  <div class="cv-entry">Stage 1 Reviewer | 2021 CCCC | 2020</div>
+  <div class="cv-entry">Editor-at-Large | <i>Digital Humanities Now</i> | Spring 2020.</div>
+</section>
+
+<!-- INSTITUTIONAL SERVICE -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">INSTITUTIONAL</div>
+  <h2 class="section-title">INSTITUTIONAL <span class="accent">SERVICE</span></h2>
+
+  <div class="cv-subsection-title">Washington State University</div>
+
+  <div class="cv-sub-subsection-title">University Service</div>
+  <div class="cv-entry">New Faculty Seed Grant Awards Committee | College of Arts and Sciences | 2026 –</div>
+  <div class="cv-entry">Equity and Outreach Awards Committee | College of Arts and Sciences | 2024 – 2026.</div>
+  <div class="cv-entry">Inaugural Outreach, Access and Strategic Initiatives Advisory Council | College of Arts and Sciences | 2024 –</div>
+  <div class="cv-entry">Equity and Justice (EQJS) Community of Practice | College of Arts and Sciences | 2024 –</div>
+
+  <div class="cv-sub-subsection-title">Departmental Service</div>
+  <div class="cv-entry">Rhetoric and Professional Writing, Undergraduate Major Track Working Group | 2026 –</div>
+  <div class="cv-entry">Anti Anti-Immigrant Policies and Rhetorics: Reading Group | 2026 –</div>
+  <div class="cv-entry">Tenure Track Annual Review Guidelines Committee | 2025 –</div>
+  <div class="cv-entry">Redesigned <i>ENG/WGSS 362: The Rhetorics of Racism</i> for Cross-Listing with Women's, Gender, and Sexuality Studies | 2025.</div>
+  <div class="cv-entry">Graduate Studies Committee| 2025 –</div>
+  <div class="cv-entry">Graduate Placement Committee Co-Director | 2024 – 2025</div>
+  <div class="cv-entry">Rhetoric and Composition Working Group | 2023 –</div>
+  <div class="cv-entry">Professional Writing Career Track Job Search Committee | 2023 - 2024</div>
+  <div class="cv-entry">Professional Writing and Social Justice: Reading Group | 2023 – 2024.</div>
+
+  <div class="cv-sub-subsection-title">Extra-Curricular University Service</div>
+  <div class="cv-entry">Founding Faculty Advisor | Washington State University's Global South Solidarities Student Organization (WSU-GSS) | 2024 –</div>
+  <div class="cv-entry">Organizer and Facilitator | Global South Solidarities, Digital-Multimodal Humanities, and Memory Justice: A Two-Day Workshop and Fellowship Program | Department of English | Fall 2024.</div>
+
+  <div class="cv-subsection-title">University of Texas, El Paso</div>
+  <div class="cv-entry">Reimagining Core Fellow for FYC Curriculum Redesign (Reimagining Core @ UTEP) | UTEP | 2021 - 2023</div>
+  <div class="cv-entry">Member | Composition Committee | UTEP | 2022 – 2023</div>
+  <div class="cv-entry">Continuing Co-Author | First-Year Composition Handbook | UTEP | 2021 – 2023</div>
+  <div class="cv-entry">PhD Student Member | Rhetoric Search Committee | English Department at UTEP | 2021</div>
+  <div class="cv-entry">Website Creator, Content Writer, Designer, and Photographer-researcher | Women of Color in Computing Collaborative | Multilingual UX Lab at the University of Texas at El Paso | 2018 – 2019.</div>
+</section>
+
+<!-- PROFESSIONAL AFFILIATIONS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">MEMBERSHIPS</div>
+  <h2 class="section-title">PROFESSIONAL <span class="accent">AFFILIATIONS</span></h2>
+
+  <div class="cv-entry">Rhetoric Society of America (RSA)</div>
+  <div class="cv-entry">Modern Language Association (MLA)</div>
+  <div class="cv-entry">American Sociological Association (ASA)</div>
+  <div class="cv-entry">ASA Sociology of Sex and Gender</div>
+  <div class="cv-entry">North American Society for Social Philosophy (NASSP)</div>
+  <div class="cv-entry">Design Justice Network</div>
+  <div class="cv-entry">Algorithmic Justice League</div>
+</section>
+
+<!-- RESEARCH AND TEACHING INTERESTS -->
+<section class="cv-section">
+  <div class="section-divider"></div>
+  <div class="section-label">INTERESTS</div>
+  <h2 class="section-title">RESEARCH AND TEACHING <span class="accent">INTERESTS</span></h2>
+
+  <div class="cv-entry">Anti-Oppressive Theories, Criticism, and Pedagogies</div>
+  <div class="cv-entry">Anti-Racist, Anti-Colonial, Feminist Literatures</div>
+  <div class="cv-entry">Critical Archival Studies and Critical Digital Humanities</div>
+  <div class="cv-entry">Cultural Criticism, Critical Theory, Rhetorical Theory, and Literary Theory</div>
+  <div class="cv-entry">Decolonial Border Rhetorics/the Borderlands</div>
+  <div class="cv-entry">Digital and Multimodal Writing and Rhetoric</div>
+  <div class="cv-entry">First-Year Composition and Writing Program Administration</div>
+  <div class="cv-entry">Grant Writing</div>
+  <div class="cv-entry">International Technical Communication, UX, and Design Justice</div>
+  <div class="cv-entry">Public Rhetorics and Writing</div>
+  <div class="cv-entry">Rhetorical Policy Analysis</div>
+  <div class="cv-entry">South Asian Studies</div>
+  <div class="cv-entry">Transnational Feminism, Global (South) Rhetorics, and Comparative Rhetorics</div>
+  <div class="cv-entry">Visual Rhetorics and Rhetorical Photography</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 BIBHUSHANA POUDYAL</p>
+  <p style="font-size:11px; letter-spacing:2px; color: rgba(255,255,255,0.5);">Website Designed by <span style="color: #ffffff;">Rahul Malik</span></p>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+});
+</script>
+
+</body>
+</html>

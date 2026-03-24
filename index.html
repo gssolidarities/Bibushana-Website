@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibhushana Poudyal — Assistant Professor, Washington State University</title>
+<meta name="description" content="Bibhushana Poudyal is a Nepali Assistant Professor of English at Washington State University. Her research focuses on Global South Solidarities, feminist rhetorics, and decolonial digital humanities.">
+<meta property="og:title" content="Bibhushana Poudyal — Assistant Professor, Washington State University">
+<meta property="og:description" content="Nepali scholar, feminist rhetorician, and anti-colonial digital humanist. Research and teaching in Global South Solidarities, decolonial feminist knowledge systems.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/boudhanath-stupa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bibhushana Poudyal — Assistant Professor, WSU">
+<meta name="twitter:description" content="Nepali scholar, feminist rhetorician, and anti-colonial digital humanist.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text y='78' x='10' font-size='80' font-family='serif' fill='%23C8102E' font-weight='bold'>B</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   GSS-INSPIRED DESIGN SYSTEM — ENHANCED
+   Dark-first · Bebas Neue · Red/Gold/Ink
+   WebGL + Particles + Interactivity
+   ═══════════════════════════════════════ */
+
+:root {
+  --ink: #000000;
+  --white: #FFFFFF;
+  --red: #C8102E;
+  --gold: #D4A843;
+  --red-dim: rgba(200, 16, 46, 0.15);
+  --gold-dim: rgba(212, 168, 67, 0.08);
+  --gray-text: #BBBBBB;
+  --gray-dark: #0A0A0A;
+  --gray-border: #1a1a1a;
+  --heading: 'Bebas Neue', sans-serif;
+  --body: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+::selection { background: var(--red); color: var(--white); }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) var(--ink);
+}
+
+body {
+  background: var(--ink);
+  color: var(--white);
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+p, .about-text, .project-desc, .pub-text, .honor-text,
+.highlight-card p, .course-card p, .project-card p,
+.contact-info p, .land-acknowledgment, .hero-bio {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+a { color: var(--red); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--gold); }
+
+/* ═══ CUSTOM CURSOR ═══ */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+.cursor-ring.expand {
+  width: 56px;
+  height: 56px;
+  border-color: var(--gold);
+  opacity: 0.4;
+}
+
+/* ═══ NOISE GRAIN OVERLAY ═══ */
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grainShift 0.5s steps(4) infinite;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, -1%); }
+  50% { transform: translate(1%, 2%); }
+  75% { transform: translate(-1%, -2%); }
+  100% { transform: translate(2%, 1%); }
+}
+
+/* ═══ WEBGL CANVAS ═══ */
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ═══ TOP NAV ═══ */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: all 0.5s;
+}
+
+.top-nav.scrolled {
+  padding: 12px 40px;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.nav-name {
+  font-family: var(--heading);
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--white);
+}
+
+.nav-name span { color: var(--red); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 20px;
+  position: relative;
+}
+.mobile-toggle span {
+  display: block; width: 100%; height: 2px;
+  background: var(--white); position: absolute; left: 0; transition: all 0.3s;
+}
+.mobile-toggle span:nth-child(1) { top: 0; }
+.mobile-toggle span:nth-child(2) { top: 9px; }
+.mobile-toggle span:nth-child(3) { top: 18px; }
+
+/* ═══ HERO ═══ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 8vw 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero-label {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 6px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+
+.hero-title {
+  font-family: var(--heading);
+  font-size: clamp(56px, 10vw, 130px);
+  line-height: 0.92;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+
+.hero-title .accent { color: var(--red); }
+
+.hero-title .stroke-text {
+  -webkit-text-stroke: 1.5px var(--gold);
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-family: var(--heading);
+  font-size: clamp(16px, 2.2vw, 28px);
+  letter-spacing: 5px;
+  color: var(--gold);
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s forwards;
+}
+
+.hero-bio {
+  max-width: 700px;
+  color: rgba(255,255,255,0.82);
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.9s forwards;
+}
+.hero-bio strong { color: var(--white); font-weight: 700; }
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 1s 1.4s forwards;
+}
+
+.hero-scroll-indicator span {
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.5);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--red), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; height: 30px; }
+  50% { opacity: 1; height: 50px; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══ SECTION COMMON ═══ */
+.section {
+  padding: 120px 8vw;
+  position: relative;
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--red);
+  margin-bottom: 20px;
+}
+
+.section-label {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 6px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--heading);
+  font-size: clamp(42px, 6vw, 80px);
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 50px;
+  line-height: 1;
+}
+
+.section-title .accent { color: var(--gold); }
+
+/* ═══ ABOUT ═══ */
+#about {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-text { color: rgba(255,255,255,0.82); line-height: 1.85; font-size: 18px; }
+.about-text p { margin-bottom: 20px; }
+.about-text strong { color: var(--white); }
+
+.about-highlights { display: grid; gap: 20px; }
+
+.highlight-card {
+  padding: 28px;
+  border: 1px solid var(--gray-border);
+  background: rgba(200,16,46,0.02);
+  transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(200,16,46,0.05), transparent);
+  transition: left 0.6s;
+}
+
+.highlight-card:hover::before { left: 100%; }
+.highlight-card:hover { border-color: var(--red); transform: translateX(8px); }
+
+.highlight-card h4 {
+  font-family: var(--heading);
+  font-size: 17px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ═══ INTERACTIVE RESEARCH TIMELINE ═══ */
+#research { background: var(--ink); }
+
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--gray-border);
+  overflow: hidden;
+}
+
+.timeline-line-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--red), var(--gold));
+  transition: height 0.1s;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-border);
+  background: var(--ink);
+  transition: all 0.4s;
+  z-index: 2;
+}
+
+.timeline-node.active {
+  border-color: var(--red);
+  background: var(--red);
+  box-shadow: 0 0 20px rgba(200,16,46,0.5);
+}
+
+.research-project {
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid var(--gray-border);
+  position: relative;
+}
+
+.research-project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.project-type-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+.project-title {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.project-meta {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.project-desc {
+  color: rgba(255,255,255,0.78);
+  max-width: 800px;
+  line-height: 1.85;
+  font-size: 18px;
+}
+
+/* ═══ PUBLICATIONS: INTERACTIVE FILTER ═══ */
+#publications {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-border);
+}
+
+.pub-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.pub-filter-btn {
+  padding: 8px 20px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gray-text);
+  border: 1px solid var(--gray-border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pub-filter-btn:hover, .pub-filter-btn.active {
+  border-color: var(--red);
+  color: var(--white);
+  background: rgba(200,16,46,0.1);
+}
+
+.pub-count {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--gray-text);
+  margin-bottom: 30px;
+}
+
+.pub-count span { color: var(--red); font-size: 26px; }
+
+.pub-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.8);
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.pub-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 0; height: 100%;
+  background: rgba(200,16,46,0.03);
+  transition: width 0.4s;
+}
+
+.pub-item:hover::before { width: 100%; }
+.pub-item:hover { padding-left: 20px; border-bottom-color: rgba(200,16,46,0.3); }
+.pub-item:last-child { border-bottom: none; }
+
+.pub-item .pub-year {
+  font-family: var(--heading);
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: var(--red);
+  display: inline-block;
+  margin-right: 14px;
+  min-width: 48px;
+}
+
+.pub-item .pub-text {
+  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.pub-item .pub-text em { color: var(--white); font-style: italic; }
+
+.pub-item .pub-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--heading);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  border: 1px solid rgba(212,168,67,0.3);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ═══ TEACHING: INTERACTIVE CARDS ═══ */
+#teaching { background: var(--ink); }
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.course-card {
+  padding: 36px;
+  border: 1px solid var(--gray-border);
+  background: var(--gray-dark);
+  transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.course-card .card-glow {
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.12), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translate(-50%, -50%);
+}
+
+.course-card:hover .card-glow { opacity: 1; }
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: linear-gradient(to bottom, var(--red), var(--gold));
+  transition: height 0.5s;
+}
+
+.course-card:hover::before { height: 100%; }
+.course-card:hover { border-color: rgba(200,16,46,0.4); transform: translateY(-6px); }
+
+.course-card .course-code {
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.course-card h3 {
+  font-family: var(--heading);
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+.course-card p {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 5px 14px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  border: 1px solid rgba(212,168,67,0.4);
+  background: rgba(212,168,67,0.05);
+}
+
+.award-badge::before {
+  content: '★';
+  font-size: 13px;
+}
+
+/* ═══ GSS PEDAGOGY SUB-SECTION ═══ */
+.gss-pedagogy-intro {
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.75);
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.gss-pedagogy-intro a {
+  color: var(--red);
+  border-bottom: 1px solid rgba(200,16,46,0.3);
+  padding-bottom: 1px;
+}
+
+.gss-pedagogy-intro a:hover { color: var(--gold); border-color: var(--gold); }
+
+.gss-courses { margin-top: 32px; }
+
+.gss-card {
+  border-color: rgba(200,16,46,0.15) !important;
+  background: rgba(200,16,46,0.02) !important;
+}
+
+.gss-card:hover {
+  border-color: var(--red) !important;
+  background: rgba(200,16,46,0.05) !important;
+}
+
+.gss-card::before {
+  background: linear-gradient(to bottom, var(--red), var(--gold)) !important;
+}
+
+.gss-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-family: var(--heading);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--red);
+  border: 1px solid rgba(200,16,46,0.35);
+  background: rgba(200,16,46,0.06);
+  margin-bottom: 14px;
+}
+
+.gss-course-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--heading);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--red);
+  border-bottom: 1px solid rgba(200,16,46,0.4);
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.gss-course-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ═══ HONORS: ANIMATED COUNTERS ═══ */
+#honors {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-border);
+}
+
+.honors-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px solid var(--gray-border);
+  transition: all 0.4s;
+}
+
+.stat-box:hover { border-color: var(--red); }
+
+.stat-number {
+  font-family: var(--heading);
+  font-size: 56px;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gray-text);
+}
+
+.honors-list { display: grid; gap: 16px; max-width: 800px; }
+
+.honor-item {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--gray-border);
+  transition: all 0.3s;
+}
+
+.honor-item:hover { padding-left: 12px; }
+.honor-item:last-child { border-bottom: none; }
+
+.honor-year {
+  font-family: var(--heading);
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+.honor-text {
+  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.honor-text strong { color: var(--white); }
+
+/* ═══ PROJECTS: 3D TILT CARDS ═══ */
+#projects { background: var(--ink); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  padding: 40px;
+  border: 1px solid var(--gray-border);
+  background: var(--gray-dark);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  transform-style: preserve-3d;
+}
+
+.project-card:hover { border-color: var(--gold); }
+
+.project-card .card-num {
+  font-family: var(--heading);
+  font-size: 80px;
+  color: rgba(200,16,46,0.07);
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+.project-card:hover .card-num { color: rgba(200,16,46,0.15); }
+
+.project-card h3 {
+  font-family: var(--heading);
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.project-card p {
+  color: rgba(255,255,255,0.72);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.project-card .card-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--red);
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.project-card .card-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ═══ NETWORK VIZ SECTION ═══ */
+#network-viz {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-border);
+  border-bottom: 1px solid var(--gray-border);
+  position: relative;
+  overflow: hidden;
+}
+
+#networkCanvas {
+  width: 100%;
+  height: 500px;
+  display: block;
+}
+
+.network-legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gray-text);
+}
+
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+/* ═══ INLINE SPREAD PHOTOS ═══ */
+.inline-photo {
+  margin: 48px 0;
+  border: 1px solid var(--gray-border);
+  overflow: hidden;
+  transition: border-color 0.4s;
+}
+
+.inline-photo:hover { border-color: rgba(200,16,46,0.35); }
+
+.inline-photo img {
+  width: 100%;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+  transition: all 0.6s;
+}
+
+.inline-photo:hover img {
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.inline-photo .photo-credit {
+  padding: 12px 18px;
+  background: rgba(10,10,10,0.95);
+  border-top: 1px solid var(--gray-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.inline-photo .photo-credit .credit-location {
+  font-family: var(--heading);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+.inline-photo .photo-credit .credit-text {
+  font-family: var(--body);
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Wide banner variant */
+.inline-photo.wide {
+  margin-left: -4vw;
+  margin-right: -4vw;
+}
+
+.inline-photo.wide img {
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Standard variant */
+.inline-photo.standard img {
+  max-height: 450px;
+  object-fit: cover;
+}
+
+/* Small accent variant */
+.inline-photo.accent {
+  max-width: 500px;
+}
+
+.inline-photo.accent img {
+  max-height: 360px;
+  object-fit: cover;
+}
+
+/* ═══ CV SECTION ═══ */
+#cv { background: var(--ink); }
+
+.cv-container { max-width: 900px; }
+
+.cv-embed-wrapper {
+  border: 1px solid var(--gray-border);
+  background: #fff;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cv-embed {
+  width: 100%;
+  height: 700px;
+  border: none;
+  display: block;
+}
+
+.cv-actions {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cv-download-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: var(--heading);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--white);
+  background: var(--red);
+  border: 1px solid var(--red);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.cv-download-btn:hover {
+  background: transparent;
+  color: var(--red);
+}
+
+.cv-note {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 600px) {
+  .cv-embed { height: 450px; }
+}
+
+/* ═══ CONTACT ═══ */
+#contact {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-border);
+  padding: 100px 8vw;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.contact-info a { color: var(--red); font-weight: 600; }
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  padding: 10px 20px;
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gray-text);
+  border: 1px solid var(--gray-border);
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  color: var(--white);
+  border-color: var(--red);
+  background: rgba(200,16,46,0.08);
+}
+
+.land-acknowledgment {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.land-acknowledgment strong { color: #888; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--ink);
+  padding: 32px 8vw;
+  border-top: 1px solid var(--gray-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-family: var(--heading);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+footer .gss-credit { color: var(--red); }
+
+/* ═══ FLOATING NAV ═══ */
+.float-nav {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.float-nav.visible { opacity: 1; transform: translateY(0); }
+
+.float-nav a {
+  display: block;
+  padding: 7px 16px;
+  background: rgba(10,10,10,0.85);
+  border: 1px solid rgba(200,16,46,0.2);
+  border-radius: 24px;
+  font-family: var(--heading);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s;
+}
+
+.float-nav a:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+/* ═══ SCROLL PROGRESS ═══ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  z-index: 10001;
+  transition: width 0.05s;
+}
+
+/* ═══ REVEAL ═══ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-left.active { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-right.active { opacity: 1; transform: translateX(0); }
+
+/* stagger children */
+.stagger > * { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .honors-stats { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.95);
+    padding: 20px 30px;
+    border: 1px solid #1a1a1a;
+    gap: 16px;
+    z-index: 100;
+  }
+  .mobile-toggle { display: block; }
+  .hero { padding: 100px 6vw 60px; }
+  .section { padding: 80px 6vw; }
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+@media (max-width: 600px) {
+  .teaching-grid, .projects-grid { grid-template-columns: 1fr; }
+  .float-nav { display: none; }
+  .honors-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- GRAIN -->
+<div class="grain-overlay"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══ TOP NAV ═══ -->
+<nav class="top-nav" id="topNav">
+  <div class="nav-name">BIBHUSHANA <span>POUDYAL</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#network-viz">Network</a></li>
+    <li><a href="#honors">Honors</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- FLOAT NAV -->
+<div class="float-nav" id="floatNav">
+  <a href="#about">ABOUT</a>
+  <a href="#research">RESEARCH</a>
+  <a href="#publications">PUBS</a>
+  <a href="#teaching">TEACHING</a>
+  <a href="#contact">CONTACT</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-label">ASSISTANT PROFESSOR · WASHINGTON STATE UNIVERSITY</div>
+    <h1 class="hero-title">BIBHUSHANA<br><span class="accent">POUDYAL</span></h1>
+    <div class="hero-subtitle">GLOBAL SOUTH SOLIDARITIES</div>
+    <p class="hero-bio">
+      <strong>Nepali scholar, feminist rhetorician, and anti-colonial digital humanist.</strong>
+      Her research and teaching emerge from the intervening philosophies and praxes of
+      <strong>Internationalism and Global South Solidarities (GSS)</strong> — building decolonial
+      feminist knowledge systems as a transformative and dignified force within academia and beyond.
+    </p>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section" id="about">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">WHO I AM</div>
+    <h2 class="section-title">ABOUT</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal-left">
+      <p>
+        Bibhushana Poudyal is a <strong>Nepali Assistant Professor of English</strong> at Washington State University (WSU).
+        She is from Nepal where she completed her MPhil in English and taught graduate and undergraduate courses on
+        literary studies, cultural criticism, and writing. She completed her PhD from the University of Texas, El Paso.
+      </p>
+      <p>
+        Her research, teaching, administrative, and service interests are grounded in anti-oppressive approaches to
+        <strong>Internationalist Feminist Rhetorics, Global South Rhetorics, Public Rhetorics, Critical Cultural Rhetorics,
+        Technical and Professional Communication</strong>, and <strong>Digital and Multimodal Humanities, Archives, Storytelling,
+        Writing, and Literacies</strong>.
+      </p>
+      <p>
+        She is currently serving on a <strong>College of Arts and Sciences' inaugural Equity and Outreach Advisory Council</strong>
+        at WSU. She aims to build and practice solidarity among academic workers and community members committed to making
+        decolonial feminist knowledge systems, experiences, and voices of the global majority and global plurality as a
+        transformative and dignified force within academia and beyond.
+      </p>
+      <p>
+        Her works revolve around <strong>comparative antiracism, anticolonial praxes, intersectional and internationalist
+        feminisms, and multimodal digital humanities</strong>.
+      </p>
+    </div>
+    <div class="about-highlights reveal-right stagger">
+      <div class="highlight-card" style="--i:0">
+        <h4>EDUCATION</h4>
+        <p>PhD, Rhetoric and Writing Studies — University of Texas, El Paso</p>
+        <p>MPhil in English — IACER, Pokhara University, Nepal</p>
+        <p>MA in English — Tribhuvan University, Nepal</p>
+      </div>
+      <div class="highlight-card" style="--i:1">
+        <h4>POSITION</h4>
+        <p>Assistant Professor of English, Washington State University</p>
+        <p>Affiliate Faculty, Women, Gender, and Sexuality Studies</p>
+        <p>Buchanan Distinguished Assistant Professor (2024–2026)</p>
+      </div>
+      <div class="highlight-card" style="--i:2">
+        <h4>AFFILIATIONS</h4>
+        <p>Program in Women's, Gender, and Sexuality Studies, WSU</p>
+        <p>Equity and Outreach Advisory Council, WSU</p>
+      </div>
+      <div class="highlight-card" style="--i:3">
+        <h4>RESEARCH AREAS</h4>
+        <p>Digital Archives · Design Justice · Digital Humanities · Technical & Professional Writing · Critical Pedagogy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO: Kathmandu Streets — wide banner -->
+<div class="inline-photo wide reveal" style="margin:0;">
+  <img src="images/kathmandu-streets.jpg" alt="Kathmandu streets — panoramic view of temple architecture and urban life" loading="lazy">
+  <div class="photo-credit">
+    <span class="credit-location">KATHMANDU STREETS</span>
+    <span class="credit-text">Photo: Bibhushana Poudyal &amp; Udeep · Kathmandu, 2017</span>
+  </div>
+</div>
+
+<!-- ═══ RESEARCH ═══ -->
+<section class="section" id="research">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">SCHOLARSHIP</div>
+    <h2 class="section-title">RESEARCH <span class="accent">& PROJECTS</span></h2>
+  </div>
+
+  <div class="timeline-container">
+    <div class="timeline-line"><div class="timeline-line-fill" id="timelineFill"></div></div>
+
+    <div class="research-project reveal">
+      <div class="project-type-tag">ONGOING PROJECT</div>
+      <div class="project-title">RE-RHETORICIZING GLOBAL SOUTHS CONTRAPUNTALLY</div>
+      <div class="project-meta">BORDERLESS TRANSNATIONAL FEMINIST DESIGN JUSTICE</div>
+      <p class="project-desc">
+        A multimodal digital and scholarly research project bringing together examples from South Asia, the Middle East,
+        the Americas, Africa, and Turtle Island to demonstrate the vicious continuum between rhetorical violence and
+        material violence — and what the field and subfields of Humanities and Social Sciences can do to confront the ways
+        empire, capitalism, racism, heteropatriarchy, and digital colonialism silence, erase, and exploit Global South
+        communities — while also tracing the insurgent strategies those same communities deploy to survive, resist, revolt,
+        reclaim, and speak back.
+      </p>
+    </div>
+
+    <div class="research-project reveal">
+      <div class="project-type-tag">MONOGRAPH</div>
+      <div class="project-title">GENDERING SOUTH ASIA</div>
+      <div class="project-meta">RHETORICAL NON-PHALLIC BODIES IN THE GLOBAL CAPITAL · ROUTLEDGE, 2025</div>
+      <p class="project-desc">
+        This book analyzes how gendered female bodies and non-phallic bodies function, are rhetoricized as functioning,
+        are made to function, or are functioned upon in two extremized spaces — the private and the public. It examines
+        heteronormative rhetorics built around cis women, trans women, trans men, and queer bodies through policies,
+        jurisdictions, media, and laws. The book provides a framework for challenging the phallic symbolic order of
+        patriarchy, heteronormativity, capitalism, colonialism, racism, and imperialism.
+      </p>
+    </div>
+
+    <div class="research-project reveal">
+      <div class="project-type-tag">SEED GRANT · 2025</div>
+      <div class="project-title">DIGITAL STORYTELLING AND GLOBAL SOUTH SOLIDARITIES</div>
+      <div class="project-meta">JUSTICE-DRIVEN OPEN SCHOLARSHIP IN HUMANITIES · WSU NEW FACULTY SEED GRANT</div>
+      <p class="project-desc">
+        A justice-driven open scholarship initiative in the humanities, supported by WSU's highly competitive New Faculty
+        Seed Grant. This project extends the work of Global South Solidarities into digital storytelling methodologies
+        that center the voices and knowledge systems of the global majority.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO: Boudhanath Stupa -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/boudhanath-stupa.jpg" alt="Boudhanath Stupa — prayer flags and devotees" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">BOUDHANATH STUPA</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 2/11/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<section class="section" id="publications">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">PUBLISHED WORK</div>
+    <h2 class="section-title">SELECTED <span class="accent">PUBLICATIONS</span></h2>
+  </div>
+
+  <div class="pub-filters reveal">
+    <button class="pub-filter-btn active" data-filter="all">ALL</button>
+    <button class="pub-filter-btn" data-filter="monograph">MONOGRAPH</button>
+    <button class="pub-filter-btn" data-filter="symposium">SYMPOSIUM</button>
+    <button class="pub-filter-btn" data-filter="article">ARTICLES</button>
+    <button class="pub-filter-btn" data-filter="chapter">CHAPTERS</button>
+    <button class="pub-filter-btn" data-filter="proceedings">PROCEEDINGS</button>
+  </div>
+
+  <div class="pub-count reveal">SHOWING <span id="pubCountNum">11</span> PUBLICATIONS</div>
+
+  <div id="pubList">
+    <div class="pub-item reveal" data-type="monograph">
+      <span class="pub-year">2025</span>
+      <span class="pub-text">
+        Poudyal, Bibhushana. <em>Gendering South Asia: Rhetorical Non-Phallic Bodies in the Global Capital.</em> Routledge.
+        <span class="pub-tag">MONOGRAPH</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="symposium">
+      <span class="pub-year">2026</span>
+      <span class="pub-text">
+        Manis, Kathryn, Bibhushana Poudyal, &amp; Patty Wilde. "Emergency Archives: Investigating Rhetorical (Im)Possibility, Action, and the Impact of Precarious 'Preservation' Under Crisis." <em>Rhetoric Review</em>, 1–88.
+        <span class="pub-tag">EDITED SYMPOSIUM</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="article">
+      <span class="pub-year">2026</span>
+      <span class="pub-text">
+        Browne, Cheyenne, &amp; Poudyal, Bibhushana. "Queerlesque: Anticolonial and Anti-Heteropatriarchal Love and Abjection in (Rural) Queer Performance." <em>Peitho</em>, 28(2).
+        <span class="pub-tag">ARTICLE</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="article">
+      <span class="pub-year">2025</span>
+      <span class="pub-text">
+        Poudyal, Bibhushana. "Challenging Racism, Perpetuating Casteism: South Asian Moral Contradictions in the Diaspora." <em>Quarterly Journal of Speech</em>, 111(3), 515–519.
+        <span class="pub-tag">ARTICLE</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="chapter">
+      <span class="pub-year">2023</span>
+      <span class="pub-text">
+        Poudyal, B. and Mala Rai. "The Smell of the Other and Self-Alienation: A Mani(fold)festo of Race, Ethnicity, and Fear of One's Own 'Haunting Cooking Odors.'" In <em>Food Justice Activism and Pedagogies</em> (pp. 71-83). Lexington Books.
+        <span class="pub-tag">CHAPTER</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="chapter">
+      <span class="pub-year">2022</span>
+      <span class="pub-text">
+        Poudyal, B. "Counter, Contradictory, and Contingent Digital-Storytelling through Theories-Praxes of Community-Based Participatory Research and Minimal Computing." In <em>Methods and Methodologies for Research in Digital Writing and Rhetoric</em> (205-224). WAC Clearinghouse.
+        <span class="pub-tag">CHAPTER</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="article">
+      <span class="pub-year">2021</span>
+      <span class="pub-text">
+        Poudyal, B. "The 'Nature' of Ethics While (Digitally) Archiving the Other." <em>Across the Disciplines</em>, 18(1/2), 177-190.
+        <span class="pub-tag">ARTICLE</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="chapter">
+      <span class="pub-year">2020</span>
+      <span class="pub-text">
+        Poudyal, B. et al. "Interrogating what we mean by 'Making': Stories from Women who Make in Community." In <em>Re-making the Library Makerspace</em> (pp. 203-224). Library Juice Press.
+        <span class="pub-tag">CHAPTER</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="proceedings">
+      <span class="pub-year">2020</span>
+      <span class="pub-text">
+        Poudyal, B. "Building Digital Archive through Collaborative UX Research." <em>Proceedings of the 38th ACM SIGDOC '20</em>. ACM.
+        <span class="pub-tag">PROCEEDINGS</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="article">
+      <span class="pub-year">2019</span>
+      <span class="pub-text">
+        Poudyal, B. and Laura Gonzales. "'So You Want to Build a Digital Archive?' A Dialogue on Critical Digital Humanities Graduate Pedagogy." <em>JITP Pedagogy</em>. 15.
+        <span class="pub-tag">ARTICLE</span>
+      </span>
+    </div>
+    <div class="pub-item reveal" data-type="article">
+      <span class="pub-year">2018</span>
+      <span class="pub-text">
+        Poudyal, B. "Building Decolonial Digital Archives: Recognizing Complexities to Reimagine Possibilities." <em>Xchanges</em>, 13.2.
+        <span class="pub-tag">ARTICLE</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO: Asan Tol Temple -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/asan-tol-temple.jpg" alt="Asan Tol — Temple of Annapurna Ajimā in old Kathmandu" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">ASAN TOL · TEMPLE OF ANNAPURNA AJIMĀ</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal · @ Asan Tol, Asanmaru Ajimā, 2/18/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TEACHING ═══ -->
+<section class="section" id="teaching">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">PEDAGOGY</div>
+    <h2 class="section-title">TEACHING <span class="accent">& COURSES</span></h2>
+  </div>
+
+  <div class="teaching-grid">
+    <div class="course-card reveal">
+      <div class="card-glow"></div>
+      <div class="course-code">ENG 548 · GRADUATE SEMINAR</div>
+      <h3>ARCHIVES, RHETORICITY OF TECHNOLOGIES, AND ANTI-OPPRESSIVE INTERVENTIONS</h3>
+      <p>Explores digital archives, the rhetorical dimensions of technology, and frameworks for anti-oppressive scholarly interventions in digital humanities.</p>
+      <div class="award-badge">BEST GRADUATE SEMINAR 2024</div>
+    </div>
+
+    <div class="course-card reveal">
+      <div class="card-glow"></div>
+      <div class="course-code">ENG 591 · GRADUATE SEMINAR</div>
+      <h3>COMPARATIVE ANTIRACIST PEDAGOGIES</h3>
+      <p>Examines antiracist pedagogical frameworks across global contexts, centering comparative approaches to teaching justice and equity in higher education.</p>
+      <div class="award-badge">BEST GRADUATE SEMINAR 2025</div>
+    </div>
+
+    <div class="course-card reveal">
+      <div class="card-glow"></div>
+      <div class="course-code">ENG 362 · UNDERGRADUATE</div>
+      <h3>RHETORICS OF RACISM / FEMINIST WORLDMAKING</h3>
+      <p>Investigates how rhetorical constructions of race and gender operate in public discourse, and explores feminist strategies for building alternative worlds.</p>
+    </div>
+
+    <div class="course-card reveal">
+      <div class="card-glow"></div>
+      <div class="course-code">UTEP · 2018–2023</div>
+      <h3>RHETORIC AND COMPOSITION</h3>
+      <p>Taught undergraduate rhetoric and composition courses, technical writing, and workplace writing at the University of Texas, El Paso.</p>
+    </div>
+  </div>
+
+  <!-- ── GSS INTERACTIVE PEDAGOGY ── -->
+  <div class="gss-pedagogy-header reveal">
+    <div class="section-divider" style="margin-top:80px;"></div>
+    <div class="section-label">GSS · OPEN ACCESS</div>
+    <h2 class="section-title" style="margin-bottom:16px;">INTERACTIVE <span class="accent">PEDAGOGY</span></h2>
+    <p class="gss-pedagogy-intro">Complete course materials — syllabi, resources, weekly assignments, and student work — openly accessible through the <a href="https://gssolidarities.org" target="_blank">Global South Solidarities</a> digital humanities platform. Teaching as an act of solidarity.</p>
+  </div>
+
+  <div class="teaching-grid gss-courses">
+    <div class="course-card gss-card reveal">
+      <div class="card-glow"></div>
+      <div class="gss-badge">GSS OPEN ACCESS</div>
+      <div class="course-code">ENG 548 · GRADUATE</div>
+      <h3>AI, BIOPOLITICS & ENGINEERED OPPRESSION</h3>
+      <p>An interdisciplinary seminar examining how AI intersects with biopolitical governance — featuring interactive D3.js visualizations, embedded media, and open reading lists.</p>
+      <a href="https://gssolidarities.org/AI_Biopolitics_final__1__5.html" class="gss-course-link" target="_blank">VIEW ON GSS →</a>
+    </div>
+
+    <div class="course-card gss-card reveal">
+      <div class="card-glow"></div>
+      <div class="gss-badge">GSS OPEN ACCESS</div>
+      <div class="course-code">ENG 548 · GRADUATE</div>
+      <h3>ARCHIVES, RHETORICITY & ANTI-OPPRESSIVE INTERVENTIONS</h3>
+      <p>Archival practice through a postcolonial lens — interactive design, historical document aesthetics, custom typography, and open course materials exploring archives as sites of power.</p>
+      <a href="https://gssolidarities.org/course-548__4_.html" class="gss-course-link" target="_blank">VIEW ON GSS →</a>
+    </div>
+
+    <div class="course-card gss-card reveal">
+      <div class="card-glow"></div>
+      <div class="gss-badge">GSS OPEN ACCESS</div>
+      <div class="course-code">ENG 591 · GRADUATE</div>
+      <h3>COMPARATIVE ANTI-RACIST PEDAGOGIES</h3>
+      <p>Centers antiracist pedagogies that actively dismantle racism through comparative, transnational frameworks — examining teaching praxis as political and ethical action.</p>
+      <a href="https://gssolidarities.org/591_Comparative_Anti_Racist_Pedagogies.html" class="gss-course-link" target="_blank">VIEW ON GSS →</a>
+    </div>
+
+    <div class="course-card gss-card reveal">
+      <div class="card-glow"></div>
+      <div class="gss-badge">GSS OPEN ACCESS</div>
+      <div class="course-code">ENG/WGSS 362 · UNDERGRADUATE</div>
+      <h3>RHETORICS OF RACISM</h3>
+      <p>Traces the rhetorics of racism to expose how discourse constructs racial hierarchies — examining media, policy, and everyday language as sites of rhetorical violence and resistance.</p>
+      <a href="https://gssolidarities.org/eng362-rhetorics-of-racism.html" class="gss-course-link" target="_blank">VIEW ON GSS →</a>
+    </div>
+
+    <div class="course-card gss-card reveal">
+      <div class="card-glow"></div>
+      <div class="gss-badge">GSS OPEN ACCESS</div>
+      <div class="course-code">ENG/WGSS 362 · UNDERGRADUATE</div>
+      <h3>ANTIRACIST RHETORICS & FEMINIST WORLDMAKING</h3>
+      <p>Foregrounds practices of resistance and the imaginative labor of building just futures — engaging antiracist rhetorics and feminist worldmaking as liberatory praxis.</p>
+      <a href="https://gssolidarities.org/engl362.html" class="gss-course-link" target="_blank">VIEW ON GSS →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NETWORK VIZ ═══ -->
+<section class="section" id="network-viz">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">INTERACTIVE</div>
+    <h2 class="section-title">RESEARCH <span class="accent">NETWORK</span></h2>
+  </div>
+  <canvas id="networkCanvas" class="reveal"></canvas>
+  <div class="network-legend reveal">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> CORE RESEARCH</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div> THEMES</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#666"></div> METHODS</div>
+  </div>
+</section>
+
+<!-- ═══ HONORS ═══ -->
+<section class="section" id="honors">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">RECOGNITION</div>
+    <h2 class="section-title">HONORS <span class="accent">& AWARDS</span></h2>
+  </div>
+
+  <div class="honors-stats reveal stagger">
+    <div class="stat-box" style="--i:0">
+      <div class="stat-number" data-target="5">0</div>
+      <div class="stat-label">AWARDS</div>
+    </div>
+    <div class="stat-box" style="--i:1">
+      <div class="stat-number" data-target="11">0</div>
+      <div class="stat-label">PUBLICATIONS</div>
+    </div>
+    <div class="stat-box" style="--i:2">
+      <div class="stat-number" data-target="2">0</div>
+      <div class="stat-label">BUCHANAN AWARDS</div>
+    </div>
+    <div class="stat-box" style="--i:3">
+      <div class="stat-number" data-target="2">0</div>
+      <div class="stat-label">BEST SEMINAR AWARDS</div>
+    </div>
+  </div>
+
+  <div class="honors-list reveal">
+    <div class="honor-item">
+      <div class="honor-year">2025</div>
+      <div class="honor-text"><strong>Buchanan Distinguished Assistant Professorship Award</strong> — WSU (Second Consecutive Year)</div>
+    </div>
+    <div class="honor-item">
+      <div class="honor-year">2025</div>
+      <div class="honor-text"><strong>New Faculty Seed Grant</strong> — Digital Storytelling and Global South Solidarities, WSU</div>
+    </div>
+    <div class="honor-item">
+      <div class="honor-year">2025</div>
+      <div class="honor-text"><strong>Best Graduate Seminar of the Year</strong> — Comparative Antiracist Pedagogies, WSU</div>
+    </div>
+    <div class="honor-item">
+      <div class="honor-year">2024</div>
+      <div class="honor-text"><strong>Buchanan Distinguished Assistant Professorship Award</strong> — WSU</div>
+    </div>
+    <div class="honor-item">
+      <div class="honor-year">2024</div>
+      <div class="honor-text"><strong>Best Graduate Seminar of the Year</strong> — Archives & Anti-Oppressive Interventions, WSU</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO: Boudhanath close-up -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/boudhanath-close.jpg" alt="Boudhanath Stupa — close-up of the stupa's iconic eyes" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">BOUDHANATH STUPA</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 2/11/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PROJECTS ═══ -->
+<section class="section" id="projects">
+  <div class="reveal">
+    <div class="section-divider"></div>
+    <div class="section-label">DIGITAL WORK</div>
+    <h2 class="section-title">DIGITAL <span class="accent">PROJECTS</span></h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal" data-tilt>
+      <div class="card-num">01</div>
+      <h3>GLOBAL SOUTH SOLIDARITIES</h3>
+      <p>A digital humanities platform for genocide studies, postcolonial analysis, and Global South scholarship — building solidarity through decolonial feminist knowledge systems.</p>
+      <a href="https://gssolidarities.org" class="card-link" target="_blank">VISIT GSS →</a>
+    </div>
+    <div class="project-card reveal" data-tilt>
+      <div class="card-num">02</div>
+      <h3>RE-RHETORICIZING GLOBAL SOUTHS</h3>
+      <p>A multimodal digital archival project closely connected to instagramming, rethinking how the Global South is represented, archived, and spoken about in digital spaces.</p>
+      <a href="https://instagram.com/bibhushanaa" class="card-link" target="_blank">@BIBHUSHANAA →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO: Boudhanath evening -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/boudhanath-evening.jpg" alt="Boudhanath Stupa — evening light on prayer flags and ritual activity" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">BOUDHANATH STUPA · EVENING</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 27/11/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal-left">
+      <div class="section-divider"></div>
+      <div class="section-label">GET IN TOUCH</div>
+      <h2 class="section-title" style="margin-bottom:24px;">CONTACT</h2>
+      <p>For more information, please contact me at<br><a href="mailto:bibhushana.poudyal@wsu.edu">bibhushana.poudyal@wsu.edu</a></p>
+      <p>Department of English, Washington State University, Pullman, WA</p>
+      <div class="social-links">
+        <a href="https://instagram.com/bibhushanaa" target="_blank" class="social-link">INSTAGRAM</a>
+        <a href="https://scholar.google.com/citations?user=JP8-kDwAAAAJ" target="_blank" class="social-link">SCHOLAR</a>
+        <a href="https://wsu.academia.edu/BibhushanaPoudyal" target="_blank" class="social-link">ACADEMIA</a>
+        <a href="https://www.researchgate.net/profile/Bibhushana-Poudyal" target="_blank" class="social-link">RESEARCHGATE</a>
+      </div>
+    </div>
+    <div class="land-acknowledgment reveal-right">
+      <strong>Land Acknowledgment</strong><br><br>
+      Washington State University acknowledges that its locations statewide are on the homelands of Native peoples,
+      who have lived in this region from time immemorial. Currently, there are 42 tribes, 35 of which are federally
+      recognized that share traditional homelands and waterways in what is now Washington State. Some of these are nations
+      and confederacies that represent multiple tribes and bands. The University expresses its deepest respect for and
+      gratitude towards these original and current caretakers of the region.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 BIBHUSHANA POUDYAL</p>
+  <p style="font-size:11px; letter-spacing:2px; color: rgba(255,255,255,0.5);">Website Designed by <span style="color: #ffffff;">Rahul Malik</span></p>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════ -->
+<script>
+// ────────────────────────────────
+// 1. WEBGL HERO SHADER (flowing mesh)
+// ────────────────────────────────
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+
+  function resize() {
+    canvas.width = canvas.clientWidth * window.devicePixelRatio;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const vsSource = `
+    attribute vec2 a_position;
+    void main() { gl_Position = vec4(a_position, 0.0, 1.0); }
+  `;
+
+  const fsSource = `
+    precision mediump float;
+    uniform float u_time;
+    uniform vec2 u_resolution;
+    uniform vec2 u_mouse;
+
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+    }
+
+    float noise(vec2 p) {
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+      f = f * f * (3.0 - 2.0 * f);
+      float a = hash(i);
+      float b = hash(i + vec2(1.0, 0.0));
+      float c = hash(i + vec2(0.0, 1.0));
+      float d = hash(i + vec2(1.0, 1.0));
+      return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+    }
+
+    float fbm(vec2 p) {
+      float v = 0.0;
+      float a = 0.5;
+      for (int i = 0; i < 5; i++) {
+        v += a * noise(p);
+        p *= 2.0;
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / u_resolution;
+      vec2 mouse = u_mouse / u_resolution;
+
+      float t = u_time * 0.15;
+
+      float n1 = fbm(uv * 3.0 + vec2(t, t * 0.7));
+      float n2 = fbm(uv * 5.0 - vec2(t * 0.5, t * 0.3));
+
+      float dist = length(uv - mouse) * 2.0;
+      float mouseInfluence = smoothstep(0.6, 0.0, dist) * 0.15;
+
+      float pattern = n1 * 0.6 + n2 * 0.4 + mouseInfluence;
+
+      vec3 red = vec3(0.78, 0.063, 0.114);
+      vec3 gold = vec3(0.83, 0.66, 0.26);
+      vec3 dark = vec3(0.0);
+
+      vec3 col = mix(dark, red, pattern * 0.2);
+      col = mix(col, gold, smoothstep(0.55, 0.75, pattern) * 0.12);
+
+      // Vignette
+      float vig = 1.0 - length((uv - 0.5) * 1.4);
+      vig = smoothstep(0.0, 0.7, vig);
+      col *= vig;
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  function createShader(type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }
+
+  const vs = createShader(gl.VERTEX_SHADER, vsSource);
+  const fs = createShader(gl.FRAGMENT_SHADER, fsSource);
+  if (!vs || !fs) return;
+
+  const program = gl.createProgram();
+  gl.attachShader(program, vs);
+  gl.attachShader(program, fs);
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
+
+  const posBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+  const posLoc = gl.getAttribLocation(program, 'a_position');
+  const timeLoc = gl.getUniformLocation(program, 'u_time');
+  const resLoc = gl.getUniformLocation(program, 'u_resolution');
+  const mouseLoc = gl.getUniformLocation(program, 'u_mouse');
+
+  let mouseX = canvas.width * 0.7, mouseY = canvas.height * 0.3;
+  window.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = (e.clientX - rect.left) * window.devicePixelRatio;
+    mouseY = (rect.height - (e.clientY - rect.top)) * window.devicePixelRatio;
+  });
+
+  function render(time) {
+    time *= 0.001;
+    resize();
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(program);
+    gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+    gl.enableVertexAttribArray(posLoc);
+    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+    gl.uniform1f(timeLoc, time);
+    gl.uniform2f(resLoc, canvas.width, canvas.height);
+    gl.uniform2f(mouseLoc, mouseX, mouseY);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+})();
+
+// ────────────────────────────────
+// 2. CUSTOM CURSOR
+// ────────────────────────────────
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px';
+  dot.style.top = my + 'px';
+});
+
+(function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+
+document.querySelectorAll('a, button, .course-card, .project-card, .highlight-card, .pub-filter-btn, .social-link, .stat-box, .gss-course-link').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+});
+
+// ────────────────────────────────
+// 3. SCROLL PROGRESS + NAV
+// ────────────────────────────────
+const topNav = document.getElementById('topNav');
+const floatNav = document.getElementById('floatNav');
+const scrollProg = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const max = document.body.scrollHeight - window.innerHeight;
+  topNav.classList.toggle('scrolled', y > 80);
+  floatNav.classList.toggle('visible', y > 600);
+  scrollProg.style.width = ((y / max) * 100) + '%';
+});
+
+// ────────────────────────────────
+// 4. SCROLL REVEAL (intersection observer)
+// ────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ────────────────────────────────
+// 5. PUBLICATION FILTERS
+// ────────────────────────────────
+const filterBtns = document.querySelectorAll('.pub-filter-btn');
+const pubItems = document.querySelectorAll('.pub-item');
+const pubCountNum = document.getElementById('pubCountNum');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    let count = 0;
+    pubItems.forEach(item => {
+      const show = filter === 'all' || item.dataset.type === filter;
+      item.style.display = show ? 'block' : 'none';
+      item.style.opacity = show ? '1' : '0';
+      if (show) count++;
+    });
+    pubCountNum.textContent = count;
+  });
+});
+
+// ────────────────────────────────
+// 6. COURSE CARD GLOW FOLLOW
+// ────────────────────────────────
+document.querySelectorAll('.course-card, .gss-card').forEach(card => {
+  const glow = card.querySelector('.card-glow');
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left) + 'px';
+    glow.style.top = (e.clientY - rect.top) + 'px';
+  });
+});
+
+// ────────────────────────────────
+// 7. 3D TILT on project cards
+// ────────────────────────────────
+document.querySelectorAll('[data-tilt], .gss-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0)';
+  });
+});
+
+// ────────────────────────────────
+// 8. ANIMATED COUNTERS
+// ────────────────────────────────
+const statNums = document.querySelectorAll('.stat-number');
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 30));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = current;
+      }, 40);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+statNums.forEach(el => counterObs.observe(el));
+
+// ────────────────────────────────
+// 9. RESEARCH NETWORK VISUALIZATION
+// ────────────────────────────────
+(function() {
+  const canvas = document.getElementById('networkCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  function resizeNet() {
+    W = canvas.clientWidth;
+    H = canvas.clientHeight;
+    canvas.width = W * window.devicePixelRatio;
+    canvas.height = H * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resizeNet();
+  window.addEventListener('resize', resizeNet);
+
+  const nodes = [
+    { label: 'Bibhushana\nPoudyal', x: 0.5, y: 0.5, r: 28, color: '#C8102E', type: 'core' },
+    { label: 'Global South\nSolidarities', x: 0.25, y: 0.3, r: 22, color: '#C8102E', type: 'core' },
+    { label: 'Transnational\nFeminism', x: 0.75, y: 0.28, r: 20, color: '#C8102E', type: 'core' },
+    { label: 'Digital\nArchives', x: 0.18, y: 0.65, r: 18, color: '#D4A843', type: 'theme' },
+    { label: 'Decolonial\nRhetorics', x: 0.82, y: 0.6, r: 18, color: '#D4A843', type: 'theme' },
+    { label: 'Anti-racist\nPedagogy', x: 0.4, y: 0.18, r: 16, color: '#D4A843', type: 'theme' },
+    { label: 'Design\nJustice', x: 0.65, y: 0.78, r: 16, color: '#D4A843', type: 'theme' },
+    { label: 'Minimal\nComputing', x: 0.12, y: 0.42, r: 14, color: '#666', type: 'method' },
+    { label: 'Community\nPraxis', x: 0.88, y: 0.4, r: 14, color: '#666', type: 'method' },
+    { label: 'Multimodal\nStorytelling', x: 0.35, y: 0.82, r: 14, color: '#666', type: 'method' },
+    { label: 'Critical Digital\nHumanities', x: 0.6, y: 0.15, r: 14, color: '#666', type: 'method' },
+    { label: 'Gender &\nSexuality', x: 0.5, y: 0.7, r: 15, color: '#D4A843', type: 'theme' },
+  ];
+
+  const edges = [
+    [0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,11],
+    [1,3],[1,5],[1,7],[1,9],
+    [2,4],[2,5],[2,8],
+    [3,7],[3,9],[3,10],
+    [4,8],[4,6],
+    [5,10],
+    [6,9],[6,11],
+    [7,9],
+    [10,8],
+    [11,2],[11,4]
+  ];
+
+  let mouseNetX = -1, mouseNetY = -1;
+  let hoveredNode = -1;
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouseNetX = e.clientX - rect.left;
+    mouseNetY = e.clientY - rect.top;
+
+    hoveredNode = -1;
+    nodes.forEach((n, i) => {
+      const nx = n.x * W, ny = n.y * H;
+      const dist = Math.hypot(mouseNetX - nx, mouseNetY - ny);
+      if (dist < n.r + 10) hoveredNode = i;
+    });
+
+    canvas.style.cursor = hoveredNode >= 0 ? 'pointer' : 'default';
+  });
+
+  canvas.addEventListener('mouseleave', () => { mouseNetX = -1; mouseNetY = -1; hoveredNode = -1; });
+
+  let time = 0;
+
+  function drawNetwork() {
+    time += 0.01;
+    ctx.clearRect(0, 0, W, H);
+
+    // Animate node positions slightly
+    nodes.forEach((n, i) => {
+      n._x = n.x * W + Math.sin(time + i * 1.3) * 4;
+      n._y = n.y * H + Math.cos(time + i * 0.9) * 3;
+    });
+
+    // Draw edges
+    edges.forEach(([a, b]) => {
+      const na = nodes[a], nb = nodes[b];
+      const isHighlight = hoveredNode === a || hoveredNode === b;
+
+      ctx.beginPath();
+      ctx.moveTo(na._x, na._y);
+      ctx.lineTo(nb._x, nb._y);
+      ctx.strokeStyle = isHighlight ? 'rgba(200,16,46,0.4)' : 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = isHighlight ? 1.5 : 0.8;
+      ctx.stroke();
+
+      // Animated particle along edge
+      if (isHighlight) {
+        const t = (time * 0.5 + a * 0.3) % 1;
+        const px = na._x + (nb._x - na._x) * t;
+        const py = na._y + (nb._y - na._y) * t;
+        ctx.beginPath();
+        ctx.arc(px, py, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(200,16,46,0.8)';
+        ctx.fill();
+      }
+    });
+
+    // Draw nodes
+    nodes.forEach((n, i) => {
+      const isHovered = hoveredNode === i;
+      const isConnected = hoveredNode >= 0 && edges.some(([a,b]) => (a === hoveredNode && b === i) || (b === hoveredNode && a === i));
+      const r = n.r + (isHovered ? 4 : 0);
+
+      // Glow
+      if (isHovered || isConnected) {
+        const grad = ctx.createRadialGradient(n._x, n._y, 0, n._x, n._y, r * 2.5);
+        grad.addColorStop(0, n.color + '33');
+        grad.addColorStop(1, 'transparent');
+        ctx.beginPath();
+        ctx.arc(n._x, n._y, r * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      // Circle
+      ctx.beginPath();
+      ctx.arc(n._x, n._y, r, 0, Math.PI * 2);
+      ctx.fillStyle = isHovered ? n.color : (hoveredNode >= 0 && !isConnected && hoveredNode !== i ? n.color + '22' : n.color + '44');
+      ctx.fill();
+      ctx.strokeStyle = isHovered ? n.color : n.color + '66';
+      ctx.lineWidth = isHovered ? 2 : 1;
+      ctx.stroke();
+
+      // Label
+      const alpha = isHovered ? 1 : (hoveredNode >= 0 && !isConnected ? 0.2 : 0.7);
+      ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+      ctx.font = `${isHovered ? 13 : 11}px 'Trebuchet MS', sans-serif`;
+      ctx.textAlign = 'center';
+      const lines = n.label.split('\n');
+      lines.forEach((line, li) => {
+        ctx.fillText(line, n._x, n._y + r + 14 + li * 13);
+      });
+    });
+
+    requestAnimationFrame(drawNetwork);
+  }
+  drawNetwork();
+})();
+
+// ────────────────────────────────
+// 10. TIMELINE FILL ON SCROLL
+// ────────────────────────────────
+const timelineFill = document.getElementById('timelineFill');
+const timelineContainer = document.querySelector('.timeline-container');
+
+if (timelineContainer && timelineFill) {
+  window.addEventListener('scroll', () => {
+    const rect = timelineContainer.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    const progress = Math.min(1, Math.max(0, (viewH - rect.top) / (rect.height + viewH)));
+    timelineFill.style.height = (progress * 100) + '%';
+  });
+}
+
+// ────────────────────────────────
+// 11. SMOOTH SCROLL + MOBILE MENU
+// ────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.querySelector('.nav-links');
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('mobile-open');
+});
+
+// Close mobile menu when a nav link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('mobile-open');
+  });
+});
+</script>
+</body>
+</html>
