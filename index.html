@@ -526,64 +526,6 @@ a:hover { color: var(--gold); }
 
 .research-project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-/* ═══ PHOTO GALLERY ═══ */
-.photo-gallery {
-  padding: 40px 8vw;
-}
-
-.photo-gallery-title {
-  font-family: var(--heading);
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.photo-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.photo-gallery-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.photo-gallery-item img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  transition: transform 0.5s, filter 0.5s;
-  filter: grayscale(30%);
-}
-
-.photo-gallery-item:hover img {
-  transform: scale(1.05);
-  filter: grayscale(0%);
-}
-
-.photo-gallery-item .photo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 12px 14px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
-  font-family: var(--body);
-  font-size: 11px;
-  color: rgba(255,255,255,0.8);
-  letter-spacing: 0.5px;
-  line-height: 1.4;
-  transform: translateY(100%);
-  transition: transform 0.4s;
-}
-
-.photo-gallery-item:hover .photo-caption {
-  transform: translateY(0);
-}
 
 .project-type-tag {
   display: inline-block;
@@ -1328,8 +1270,6 @@ footer .gss-credit { color: var(--red); }
   .profile-image-section img { max-width: 100%; height: auto; }
   .research-project.with-image { flex-direction: column; }
   .research-project .project-book-img { flex: 0 0 auto; max-width: 180px; margin: 0 auto; }
-  .photo-gallery-grid { grid-template-columns: 1fr 1fr; }
-  .photo-gallery-item img { height: 220px; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
 }
@@ -1337,8 +1277,6 @@ footer .gss-credit { color: var(--red); }
 @media (max-width: 600px) {
   .teaching-grid, .projects-grid { grid-template-columns: 1fr; }
   .float-nav { display: none; }
-  .photo-gallery-grid { grid-template-columns: 1fr; }
-  .photo-gallery-item img { height: 250px; }
   .honors-stats { grid-template-columns: 1fr 1fr; }
 }
 </style>
@@ -1465,12 +1403,12 @@ footer .gss-credit { color: var(--red); }
   </div>
 </section>
 
-<!-- PHOTO: Kathmandu Streets — wide banner -->
+<!-- PHOTO: My Hometown — wide banner -->
 <div class="inline-photo wide reveal" style="margin:0;">
-  <img src="images/kathmandu-streets.jpg" alt="Kathmandu streets — panoramic view of temple architecture and urban life" loading="lazy">
+  <img src="images/'My Hometown' by Bibhushana1.jpg" alt="'My Hometown' by Bibhushana" loading="lazy">
   <div class="photo-credit">
-    <span class="credit-location">KATHMANDU STREETS</span>
-    <span class="credit-text">Photo: Bibhushana Poudyal &amp; Udeep · Kathmandu, 2017</span>
+    <span class="credit-location">'MY HOMETOWN'</span>
+    <span class="credit-text">Photo: Bibhushana Poudyal</span>
   </div>
 </div>
 
@@ -1537,6 +1475,17 @@ footer .gss-credit { color: var(--red); }
     <div class="photo-credit">
       <span class="credit-location">BOUDHANATH STUPA</span>
       <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 2/11/2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO: El Paso for Palestine -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/A%20protestor%20at%20the%20%E2%80%98El%20Paso%20for%20Palestine%E2%80%99%20demonstration%20at%20San%20Jacinto%20Plaza%20in%20El%20Paso%2C%20Texas%2C%20May%2022%2C%202021.%20%5BPhoto_%20Bibhushana%20Poudyal%5D.jpg" alt="A protestor at the El Paso for Palestine demonstration" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">EL PASO FOR PALESTINE</span>
+      <span class="credit-text">A protestor at the demonstration at San Jacinto Plaza, El Paso, Texas, May 22, 2021 · Photo: Bibhushana Poudyal</span>
     </div>
   </div>
 </div>
@@ -1641,13 +1590,13 @@ footer .gss-credit { color: var(--red); }
   </div>
 </section>
 
-<!-- PHOTO: Asan Tol Temple -->
+<!-- PHOTO: The Chicano Codices -->
 <div style="padding:0 8vw;">
   <div class="inline-photo standard reveal">
-    <img src="images/asan-tol-temple.jpg" alt="Asan Tol — Temple of Annapurna Ajimā in old Kathmandu" loading="lazy">
+    <img src="images/Image of The Chicano Codices_ Encountering Art of the Americas [Photo_ Bibhushana Poudyal].jpg" alt="The Chicano Codices: Encountering Art of the Americas" loading="lazy">
     <div class="photo-credit">
-      <span class="credit-location">ASAN TOL · TEMPLE OF ANNAPURNA AJIMĀ</span>
-      <span class="credit-text">Photo: Bibhushana Poudyal · @ Asan Tol, Asanmaru Ajimā, 2/18/2017</span>
+      <span class="credit-location">THE CHICANO CODICES</span>
+      <span class="credit-text">Encountering Art of the Americas · Photo: Bibhushana Poudyal</span>
     </div>
   </div>
 </div>
@@ -1748,6 +1697,17 @@ footer .gss-credit { color: var(--red); }
   </div>
 </section>
 
+<!-- PHOTO: My Hometown -->
+<div style="padding:0 8vw;">
+  <div class="inline-photo standard reveal">
+    <img src="images/'My Hometown' by Bibhushana3.jpg" alt="'My Hometown' by Bibhushana" loading="lazy">
+    <div class="photo-credit">
+      <span class="credit-location">'MY HOMETOWN'</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal</span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ NETWORK VIZ ═══ -->
 <section class="section" id="network-viz">
   <div class="reveal">
@@ -1814,13 +1774,13 @@ footer .gss-credit { color: var(--red); }
   </div>
 </section>
 
-<!-- PHOTO: Boudhanath close-up -->
+<!-- PHOTO: El Paso Sky -->
 <div style="padding:0 8vw;">
   <div class="inline-photo standard reveal">
-    <img src="images/boudhanath-close.jpg" alt="Boudhanath Stupa — close-up of the stupa's iconic eyes" loading="lazy">
+    <img src="images/El Paso Sky [Photo_ Bibhushana Poudyal].jpg" alt="El Paso Sky" loading="lazy">
     <div class="photo-credit">
-      <span class="credit-location">BOUDHANATH STUPA</span>
-      <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 2/11/2017</span>
+      <span class="credit-location">EL PASO SKY</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal</span>
     </div>
   </div>
 </div>
@@ -1848,44 +1808,13 @@ footer .gss-credit { color: var(--red); }
   </div>
 </section>
 
-<!-- PHOTO: Boudhanath evening -->
+<!-- PHOTO: My Hometown -->
 <div style="padding:0 8vw;">
   <div class="inline-photo standard reveal">
-    <img src="images/boudhanath-evening.jpg" alt="Boudhanath Stupa — evening light on prayer flags and ritual activity" loading="lazy">
+    <img src="images/'My Hometown' by Bibhushana6.jpg" alt="'My Hometown' by Bibhushana" loading="lazy">
     <div class="photo-credit">
-      <span class="credit-location">BOUDHANATH STUPA · EVENING</span>
-      <span class="credit-text">Photo: Bibhushana Poudyal · @ Boudhanath Stupa, 27/11/2017</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ PHOTOGRAPHY ═══ -->
-<div class="photo-gallery">
-  <div class="photo-gallery-title reveal">PHOTOGRAPHY BY BIBHUSHANA POUDYAL</div>
-  <div class="photo-gallery-grid">
-    <div class="photo-gallery-item reveal">
-      <img src="images/'My Hometown' by Bibhushana1.jpg" alt="My Hometown by Bibhushana" loading="lazy">
-      <div class="photo-caption">'My Hometown' by Bibhushana</div>
-    </div>
-    <div class="photo-gallery-item reveal">
-      <img src="images/A%20protestor%20at%20the%20%E2%80%98El%20Paso%20for%20Palestine%E2%80%99%20demonstration%20at%20San%20Jacinto%20Plaza%20in%20El%20Paso%2C%20Texas%2C%20May%2022%2C%202021.%20%5BPhoto_%20Bibhushana%20Poudyal%5D.jpg" alt="A protestor at the El Paso for Palestine demonstration" loading="lazy">
-      <div class="photo-caption">A protestor at the 'El Paso for Palestine' demonstration at San Jacinto Plaza in El Paso, Texas, May 22, 2021</div>
-    </div>
-    <div class="photo-gallery-item reveal">
-      <img src="images/'My Hometown' by Bibhushana3.jpg" alt="My Hometown by Bibhushana" loading="lazy">
-      <div class="photo-caption">'My Hometown' by Bibhushana</div>
-    </div>
-    <div class="photo-gallery-item reveal">
-      <img src="images/Image of The Chicano Codices_ Encountering Art of the Americas [Photo_ Bibhushana Poudyal].jpg" alt="The Chicano Codices: Encountering Art of the Americas" loading="lazy">
-      <div class="photo-caption">Image of The Chicano Codices: Encountering Art of the Americas</div>
-    </div>
-    <div class="photo-gallery-item reveal">
-      <img src="images/El Paso Sky [Photo_ Bibhushana Poudyal].jpg" alt="El Paso Sky" loading="lazy">
-      <div class="photo-caption">El Paso Sky</div>
-    </div>
-    <div class="photo-gallery-item reveal">
-      <img src="images/'My Hometown' by Bibhushana6.jpg" alt="My Hometown by Bibhushana" loading="lazy">
-      <div class="photo-caption">'My Hometown' by Bibhushana</div>
+      <span class="credit-location">'MY HOMETOWN'</span>
+      <span class="credit-text">Photo: Bibhushana Poudyal</span>
     </div>
   </div>
 </div>
